@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8256F324-47EC-411A-B75B-689E942B205A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CherokeeStudyTool</RootNamespace>
+    <AssemblyName>CherokeeStudyTool</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Symbol.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syllabary Images\a.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syllabary Images\e.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syllabary Images\i.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syllabary Images\o.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syllabary Images\u.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Syllabary Images\v.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ᏣᎳᎩ phonetic to english.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a.png" />
+    <None Include="Resources\da.png" />
+    <None Include="Resources\de.png" />
+    <None Include="Resources\di.png" />
+    <None Include="Resources\dla.png" />
+    <None Include="Resources\du.png" />
+    <None Include="Resources\dv.png" />
+    <None Include="Resources\e.png" />
+    <None Include="Resources\ga.png" />
+    <None Include="Resources\ge.png" />
+    <None Include="Resources\gi.png" />
+    <None Include="Resources\go.png" />
+    <None Include="Resources\gu.png" />
+    <None Include="Resources\gv.png" />
+    <None Include="Resources\ha.png" />
+    <None Include="Resources\he.png" />
+    <None Include="Resources\hi.png" />
+    <None Include="Resources\hna.png" />
+    <None Include="Resources\ho.png" />
+    <None Include="Resources\hu.png" />
+    <None Include="Resources\hv.png" />
+    <None Include="Resources\i.png" />
+    <None Include="Resources\ka.png" />
+    <None Include="Resources\la.png" />
+    <None Include="Resources\le.png" />
+    <None Include="Resources\li.png" />
+    <None Include="Resources\lo.png" />
+    <None Include="Resources\lu.png" />
+    <None Include="Resources\lv.png" />
+    <None Include="Resources\ma.png" />
+    <None Include="Resources\me.png" />
+    <None Include="Resources\mi.png" />
+    <None Include="Resources\mo.png" />
+    <None Include="Resources\mu.png" />
+    <None Include="Resources\mv.png" />
+    <None Include="Resources\na.png" />
+    <None Include="Resources\nah.png" />
+    <None Include="Resources\ne.png" />
+    <None Include="Resources\ni.png" />
+    <None Include="Resources\no.png" />
+    <None Include="Resources\nu.png" />
+    <None Include="Resources\nv.png" />
+    <None Include="Resources\o.png" />
+    <None Include="Resources\qua.png" />
+    <None Include="Resources\que.png" />
+    <None Include="Resources\qui.png" />
+    <None Include="Resources\quo.png" />
+    <None Include="Resources\quu.png" />
+    <None Include="Resources\quv.png" />
+    <None Include="Resources\s.png" />
+    <None Include="Resources\sa.png" />
+    <None Include="Resources\se.png" />
+    <None Include="Resources\si.png" />
+    <None Include="Resources\so.png" />
+    <None Include="Resources\su.png" />
+    <None Include="Resources\sv.png" />
+    <None Include="Resources\ta.png" />
+    <None Include="Resources\te.png" />
+    <None Include="Resources\ti.png" />
+    <None Include="Resources\tla.png" />
+    <None Include="Resources\tle.png" />
+    <None Include="Resources\tli.png" />
+    <None Include="Resources\tlo.png" />
+    <None Include="Resources\tlu.png" />
+    <None Include="Resources\tlv.png" />
+    <None Include="Resources\tsa.png" />
+    <None Include="Resources\tse.png" />
+    <None Include="Resources\tsi.png" />
+    <None Include="Resources\tso.png" />
+    <None Include="Resources\tsu.png" />
+    <None Include="Resources\tsv.png" />
+    <None Include="Resources\u.png" />
+    <None Include="Resources\v.png" />
+    <None Include="Resources\wa.png" />
+    <None Include="Resources\we.png" />
+    <None Include="Resources\wi.png" />
+    <None Include="Resources\wo.png" />
+    <None Include="Resources\wu.png" />
+    <None Include="Resources\wv.png" />
+    <None Include="Resources\ya.png" />
+    <None Include="Resources\ye.png" />
+    <None Include="Resources\yi.png" />
+    <None Include="Resources\yo.png" />
+    <None Include="Resources\yu.png" />
+    <None Include="Resources\yv.png" />
+    <None Include="Resources\do.png" />
+    <Content Include="Resources\ᏣᎳᎩ syllabary to phonetic.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

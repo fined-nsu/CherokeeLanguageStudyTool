@@ -1,0 +1,11 @@
+C:\Users\fined\Google Drive\School\Capstone\CherokeeStudyTool\CherokeeStudyTool\bin\Debug\CherokeeStudyTool.exe.config
+C:\Users\fined\Google Drive\School\Capstone\CherokeeStudyTool\CherokeeStudyTool\bin\Debug\CherokeeStudyTool.exe
+C:\Users\fined\Google Drive\School\Capstone\CherokeeStudyTool\CherokeeStudyTool\bin\Debug\CherokeeStudyTool.pdb
+C:\Users\fined\Google Drive\School\Capstone\CherokeeStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.csprojAssemblyReference.cache
+C:\Users\fined\Google Drive\School\Capstone\CherokeeStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.Form1.resources
+C:\Users\fined\Google Drive\School\Capstone\CherokeeStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.Form2.resources
+C:\Users\fined\Google Drive\School\Capstone\CherokeeStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.Properties.Resources.resources
+C:\Users\fined\Google Drive\School\Capstone\CherokeeStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.csproj.GenerateResource.cache
+C:\Users\fined\Google Drive\School\Capstone\CherokeeStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.csproj.CoreCompileInputs.cache
+C:\Users\fined\Google Drive\School\Capstone\CherokeeStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.exe
+C:\Users\fined\Google Drive\School\Capstone\CherokeeStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.pdb
