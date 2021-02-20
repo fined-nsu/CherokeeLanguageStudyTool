@@ -919,25 +919,5 @@ namespace CherokeeStudyTool.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ᏣᎳᎩ_phonetic_to_english {
-            get {
-                object obj = ResourceManager.GetObject("ᏣᎳᎩ_phonetic_to_english", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ᏣᎳᎩ_syllabary_to_phonetic {
-            get {
-                object obj = ResourceManager.GetObject("ᏣᎳᎩ_syllabary_to_phonetic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

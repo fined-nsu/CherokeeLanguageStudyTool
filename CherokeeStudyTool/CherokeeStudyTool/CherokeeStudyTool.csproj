@@ -46,26 +46,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Symbol.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="HelpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="PhoneticAssessmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="PhoneticAssessmentForm.Designer.cs">
+      <DependentUpon>PhoneticAssessmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneticPracticeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhoneticPracticeForm.Designer.cs">
+      <DependentUpon>PhoneticPracticeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneticMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhoneticMenuForm.Designer.cs">
+      <DependentUpon>PhoneticMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SyllabaryAssessmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SyllabaryAssessmentForm.Designer.cs">
+      <DependentUpon>SyllabaryAssessmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SyllabaryMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SyllabaryMenuForm.Designer.cs">
+      <DependentUpon>SyllabaryMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cherokee.cs" />
+    <Compile Include="MainMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SyllabaryPracticeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SyllabaryPracticeForm.Designer.cs">
+      <DependentUpon>SyllabaryPracticeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneticAssessmentForm.resx">
+      <DependentUpon>PhoneticAssessmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneticMenuForm.resx">
+      <DependentUpon>PhoneticMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyllabaryAssessmentForm.resx">
+      <DependentUpon>SyllabaryAssessmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyllabaryMenuForm.resx">
+      <DependentUpon>SyllabaryMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SyllabaryPracticeForm.resx">
+      <DependentUpon>SyllabaryPracticeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneticPracticeForm.resx">
+      <DependentUpon>PhoneticPracticeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -89,24 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Syllabary Images\a.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Syllabary Images\e.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Syllabary Images\i.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Syllabary Images\o.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Syllabary Images\u.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Syllabary Images\v.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ᏣᎳᎩ phonetic to english.jpg" />
@@ -199,6 +235,17 @@
     <None Include="Resources\yv.png" />
     <None Include="Resources\do.png" />
     <Content Include="Resources\ᏣᎳᎩ syllabary to phonetic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
