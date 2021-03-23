@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Windows.Forms;
+using System.IO;
 using WMPLib;
 
 namespace CherokeeStudyTool
@@ -58,14 +60,12 @@ namespace CherokeeStudyTool
         /// <param name="_lines"></param>
         private void GetEnglishWords(string[] _lines)
         {
-            string line; //A string variable to use for extracting individual lines from the lines array.
             int k = 0; //A counter to interate through each seperate translation string array.
             //For loop to copy the English word for each line into listBox1.
-            for (int i = 0; i < _lines.Length; i++)
+            foreach(string line in _lines)
             {
-                line = _lines[i];
                 string[] columns = line.Split(',');
-                for (int j = 0; j < columns.Length; j += 3)
+                for (int j = 0; j< columns.Length; j += 3)
                 {
                     englishWords[k++] = columns[j];
                 }
@@ -78,12 +78,10 @@ namespace CherokeeStudyTool
         /// <param name="_lines"></param>
         private void GetPhoneticWords(string[] _lines)
         {
-            string line; //A string variable to use for extracting individual lines from the lines array.
             int k = 0; //A counter to interate through each seperate translation string array.
             //For loop to copy the Phonetic word for each line into listBox2.
-            for (int i = 0; i < _lines.Length; i++)
+            foreach (string line in _lines)
             {
-                line = _lines[i];
                 string[] columns = line.Split(',');
                 for (int j = 1; j < columns.Length; j += 3)
                 {
@@ -98,12 +96,10 @@ namespace CherokeeStudyTool
         /// <param name="_lines"></param>
         private void GetSyllabaryWordS(string[] _lines)
         {
-            string line; //A string variable to use for extracting individual lines from the lines array.
             int k = 0; //A counter to interate through each seperate translation string array.
             //For loop to copy the Syllabary word for each line into listBox3.
-            for (int i = 0; i < _lines.Length; i++)
+            foreach (string line in _lines)
             {
-                line = _lines[i];
                 string[] columns = line.Split(',');
                 for (int j = 2; j < columns.Length; j += 3)
                 {
@@ -197,6 +193,7 @@ namespace CherokeeStudyTool
         /// <param name="sentListBox"></param>
         private void PlayCherokeeAudio(object sender, EventArgs e)
         {
+            //bool isAudioAvailable = true;
             ListBox lb = sender as ListBox;
             if (lb.SelectedItem == null)
             {
@@ -207,9 +204,45 @@ namespace CherokeeStudyTool
             string wordString = CherokeeWordList[lb.SelectedIndex].English;
             player.URL = @"https://data.cherokee.org/Cherokee/LexiconSoundFiles/" + wordString + ".mp3";
 
-            player.controls.play();
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(player.URL);
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    player.controls.play();
+                    label2.Visible = false;
+                }
+                if(WMPPlayState.wmppsTransitioning == player.playState)
+                {
+                    label2.Text = "Playing";
+                    label2.Visible = true;
+                }
+
+                response.Close();
+            }
+            catch (WebException ex)
+            {
+                if (ex.Status == WebExceptionStatus.ProtocolError && ex.Response != null)
+                {
+                    var resp = (HttpWebResponse)ex.Response;
+                    if (resp.StatusCode == HttpStatusCode.NotFound)
+                    {
+                        label2.Text = "Audio Unavailable";
+                        label2.Visible = true;
+                    }
+                }
+                else
+                { throw; }
+            }
         }
 
+        /// <summary>
+        /// Close this form and return to the Phonetic Menu form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GoToPhoneticMenu(object sender, EventArgs e)
         {
             this.Close();

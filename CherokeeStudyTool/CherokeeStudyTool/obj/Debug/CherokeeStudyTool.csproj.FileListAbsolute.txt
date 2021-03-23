@@ -28,3 +28,4 @@ C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeSt
 C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.PhoneticPracticeForm.resources
 C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.PhoneticAssessmentForm.resources
 C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.SyllabaryAssessmentForm.resources
+C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.Records.resources

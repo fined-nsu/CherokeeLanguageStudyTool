@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>CherokeeStudyTool</RootNamespace>
     <AssemblyName>CherokeeStudyTool</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -70,6 +71,12 @@
     <Compile Include="PhoneticMenuForm.Designer.cs">
       <DependentUpon>PhoneticMenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Records.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Records.Designer.cs">
+      <DependentUpon>Records.cs</DependentUpon>
+    </Compile>
     <Compile Include="SyllabaryAssessmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +104,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserRecords.cs" />
     <EmbeddedResource Include="HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PhoneticMenuForm.resx">
       <DependentUpon>PhoneticMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Records.resx">
+      <DependentUpon>Records.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SyllabaryAssessmentForm.resx">
       <DependentUpon>SyllabaryAssessmentForm.cs</DependentUpon>

@@ -33,5 +33,10 @@ namespace CherokeeStudyTool
         {
             this.Close();
         }
+
+        private void Exit(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

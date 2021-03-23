@@ -29,10 +29,12 @@ namespace CherokeeStudyTool
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhoneticMenuForm));
             this.btnPhoneticStudy = new System.Windows.Forms.Button();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToMainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPhoneticAssessment = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -41,7 +43,7 @@ namespace CherokeeStudyTool
             // 
             this.btnPhoneticStudy.BackColor = System.Drawing.Color.White;
             this.btnPhoneticStudy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnPhoneticStudy.Font = new System.Drawing.Font("Phoreus Cherokee", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhoneticStudy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhoneticStudy.ForeColor = System.Drawing.Color.Black;
             this.btnPhoneticStudy.Location = new System.Drawing.Point(250, 100);
             this.btnPhoneticStudy.Name = "btnPhoneticStudy";
@@ -65,7 +67,8 @@ namespace CherokeeStudyTool
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.returnToMainMenuToolStripMenuItem});
+            this.returnToMainMenuToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -80,11 +83,20 @@ namespace CherokeeStudyTool
             this.returnToMainMenuToolStripMenuItem.Text = "Return to Main Menu";
             this.returnToMainMenuToolStripMenuItem.Click += new System.EventHandler(this.GoToMainMenu);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.Exit);
+            // 
             // btnPhoneticAssessment
             // 
             this.btnPhoneticAssessment.BackColor = System.Drawing.Color.White;
             this.btnPhoneticAssessment.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnPhoneticAssessment.Font = new System.Drawing.Font("Phoreus Cherokee", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhoneticAssessment.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhoneticAssessment.ForeColor = System.Drawing.Color.Black;
             this.btnPhoneticAssessment.Location = new System.Drawing.Point(580, 100);
             this.btnPhoneticAssessment.Name = "btnPhoneticAssessment";
@@ -104,6 +116,7 @@ namespace CherokeeStudyTool
             this.Controls.Add(this.btnPhoneticStudy);
             this.Controls.Add(this.menuStrip2);
             this.ForeColor = System.Drawing.Color.SteelBlue;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PhoneticMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cherokee Phonetic Menu";
@@ -120,5 +133,6 @@ namespace CherokeeStudyTool
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnToMainMenuToolStripMenuItem;
         private System.Windows.Forms.Button btnPhoneticAssessment;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
