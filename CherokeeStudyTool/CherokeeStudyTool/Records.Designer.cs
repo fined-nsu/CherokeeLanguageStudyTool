@@ -33,8 +33,8 @@ namespace CherokeeStudyTool
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.returnToMainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToMainMenuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblPreviousPhoneticScore = new System.Windows.Forms.Label();
             this.lblTopPhoneticScore = new System.Windows.Forms.Label();
@@ -42,15 +42,23 @@ namespace CherokeeStudyTool
             this.lblTopSyllabaryScore = new System.Windows.Forms.Label();
             this.btnLoadRecord = new System.Windows.Forms.Button();
             this.lblLearnerLevel = new System.Windows.Forms.Label();
-            this.lblPhoneticAssessmentsCompleted = new System.Windows.Forms.Label();
-            this.lblSyllabaryAssessmentsCompleted = new System.Windows.Forms.Label();
+            this.lblPhoneticAssessmentsAttempted = new System.Windows.Forms.Label();
+            this.lblSyllabaryAssessmentsAttempted = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblEnglishAssessmentsCompleted = new System.Windows.Forms.Label();
+            this.lblEnglishAssessmentsAttempted = new System.Windows.Forms.Label();
             this.lblTopEnglishScore = new System.Windows.Forms.Label();
             this.lblPreviousEnglishScore = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -60,7 +68,7 @@ namespace CherokeeStudyTool
             this.returnToMainMenuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1031, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1432, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,215 +90,284 @@ namespace CherokeeStudyTool
             this.returnToMainMenuToolStripMenuItem1.Text = "Return to Main Menu";
             this.returnToMainMenuToolStripMenuItem1.Click += new System.EventHandler(this.ReturnToMainMenu);
             // 
-            // label1
+            // lblFirstName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Name";
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.Location = new System.Drawing.Point(17, 30);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(101, 24);
+            this.lblFirstName.TabIndex = 0;
+            this.lblFirstName.Text = "First Name";
             // 
-            // textBoxName
+            // textBoxFirstName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(42, 79);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxName.TabIndex = 2;
+            this.textBoxFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFirstName.Location = new System.Drawing.Point(21, 56);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(149, 29);
+            this.textBoxFirstName.TabIndex = 1;
             // 
             // lblName
             // 
+            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(205, 42);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(303, 104);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(72, 26);
-            this.lblName.TabIndex = 3;
+            this.lblName.Size = new System.Drawing.Size(68, 25);
+            this.lblName.TabIndex = 0;
             this.lblName.Text = "Name";
             this.lblName.Visible = false;
             // 
             // lblPreviousPhoneticScore
             // 
             this.lblPreviousPhoneticScore.AutoSize = true;
-            this.lblPreviousPhoneticScore.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreviousPhoneticScore.Location = new System.Drawing.Point(219, 113);
+            this.lblPreviousPhoneticScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreviousPhoneticScore.Location = new System.Drawing.Point(18, 41);
             this.lblPreviousPhoneticScore.Name = "lblPreviousPhoneticScore";
-            this.lblPreviousPhoneticScore.Size = new System.Drawing.Size(161, 26);
-            this.lblPreviousPhoneticScore.TabIndex = 5;
+            this.lblPreviousPhoneticScore.Size = new System.Drawing.Size(164, 25);
+            this.lblPreviousPhoneticScore.TabIndex = 0;
             this.lblPreviousPhoneticScore.Text = "Previous Score:";
             this.lblPreviousPhoneticScore.Visible = false;
             // 
             // lblTopPhoneticScore
             // 
             this.lblTopPhoneticScore.AutoSize = true;
-            this.lblTopPhoneticScore.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopPhoneticScore.Location = new System.Drawing.Point(219, 139);
+            this.lblTopPhoneticScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopPhoneticScore.Location = new System.Drawing.Point(18, 67);
             this.lblTopPhoneticScore.Name = "lblTopPhoneticScore";
-            this.lblTopPhoneticScore.Size = new System.Drawing.Size(112, 26);
-            this.lblTopPhoneticScore.TabIndex = 7;
+            this.lblTopPhoneticScore.Size = new System.Drawing.Size(117, 25);
+            this.lblTopPhoneticScore.TabIndex = 0;
             this.lblTopPhoneticScore.Text = "Top Score:";
             this.lblTopPhoneticScore.Visible = false;
             // 
             // lblPreviousSyllabaryScore
             // 
             this.lblPreviousSyllabaryScore.AutoSize = true;
-            this.lblPreviousSyllabaryScore.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreviousSyllabaryScore.Location = new System.Drawing.Point(589, 113);
+            this.lblPreviousSyllabaryScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreviousSyllabaryScore.Location = new System.Drawing.Point(18, 41);
             this.lblPreviousSyllabaryScore.Name = "lblPreviousSyllabaryScore";
-            this.lblPreviousSyllabaryScore.Size = new System.Drawing.Size(161, 26);
-            this.lblPreviousSyllabaryScore.TabIndex = 8;
+            this.lblPreviousSyllabaryScore.Size = new System.Drawing.Size(164, 25);
+            this.lblPreviousSyllabaryScore.TabIndex = 0;
             this.lblPreviousSyllabaryScore.Text = "Previous Score:";
             this.lblPreviousSyllabaryScore.Visible = false;
             // 
             // lblTopSyllabaryScore
             // 
             this.lblTopSyllabaryScore.AutoSize = true;
-            this.lblTopSyllabaryScore.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopSyllabaryScore.Location = new System.Drawing.Point(589, 139);
+            this.lblTopSyllabaryScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopSyllabaryScore.Location = new System.Drawing.Point(18, 67);
             this.lblTopSyllabaryScore.Name = "lblTopSyllabaryScore";
-            this.lblTopSyllabaryScore.Size = new System.Drawing.Size(112, 26);
-            this.lblTopSyllabaryScore.TabIndex = 9;
+            this.lblTopSyllabaryScore.Size = new System.Drawing.Size(117, 25);
+            this.lblTopSyllabaryScore.TabIndex = 0;
             this.lblTopSyllabaryScore.Text = "Top Score:";
             this.lblTopSyllabaryScore.Visible = false;
             // 
             // btnLoadRecord
             // 
-            this.btnLoadRecord.Location = new System.Drawing.Point(42, 115);
+            this.btnLoadRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadRecord.Location = new System.Drawing.Point(21, 153);
             this.btnLoadRecord.Name = "btnLoadRecord";
-            this.btnLoadRecord.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadRecord.TabIndex = 10;
-            this.btnLoadRecord.Text = "Load";
+            this.btnLoadRecord.Size = new System.Drawing.Size(149, 42);
+            this.btnLoadRecord.TabIndex = 3;
+            this.btnLoadRecord.TabStop = false;
+            this.btnLoadRecord.Text = "Load Record";
             this.btnLoadRecord.UseVisualStyleBackColor = true;
             this.btnLoadRecord.Click += new System.EventHandler(this.LoadRecord);
             // 
             // lblLearnerLevel
             // 
+            this.lblLearnerLevel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLearnerLevel.AutoSize = true;
-            this.lblLearnerLevel.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLearnerLevel.Location = new System.Drawing.Point(574, 42);
+            this.lblLearnerLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLearnerLevel.Location = new System.Drawing.Point(803, 104);
             this.lblLearnerLevel.Name = "lblLearnerLevel";
-            this.lblLearnerLevel.Size = new System.Drawing.Size(70, 26);
-            this.lblLearnerLevel.TabIndex = 11;
+            this.lblLearnerLevel.Size = new System.Drawing.Size(70, 25);
+            this.lblLearnerLevel.TabIndex = 0;
             this.lblLearnerLevel.Text = "Level:";
             this.lblLearnerLevel.Visible = false;
             // 
-            // lblPhoneticAssessmentsCompleted
+            // lblPhoneticAssessmentsAttempted
             // 
-            this.lblPhoneticAssessmentsCompleted.AutoSize = true;
-            this.lblPhoneticAssessmentsCompleted.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneticAssessmentsCompleted.Location = new System.Drawing.Point(219, 165);
-            this.lblPhoneticAssessmentsCompleted.Name = "lblPhoneticAssessmentsCompleted";
-            this.lblPhoneticAssessmentsCompleted.Size = new System.Drawing.Size(259, 26);
-            this.lblPhoneticAssessmentsCompleted.TabIndex = 12;
-            this.lblPhoneticAssessmentsCompleted.Text = "Assessments Completed:";
-            this.lblPhoneticAssessmentsCompleted.Visible = false;
+            this.lblPhoneticAssessmentsAttempted.AutoSize = true;
+            this.lblPhoneticAssessmentsAttempted.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhoneticAssessmentsAttempted.Location = new System.Drawing.Point(18, 93);
+            this.lblPhoneticAssessmentsAttempted.Name = "lblPhoneticAssessmentsAttempted";
+            this.lblPhoneticAssessmentsAttempted.Size = new System.Drawing.Size(249, 25);
+            this.lblPhoneticAssessmentsAttempted.TabIndex = 0;
+            this.lblPhoneticAssessmentsAttempted.Text = "Assessments Attempted:";
+            this.lblPhoneticAssessmentsAttempted.Visible = false;
             // 
-            // lblSyllabaryAssessmentsCompleted
+            // lblSyllabaryAssessmentsAttempted
             // 
-            this.lblSyllabaryAssessmentsCompleted.AutoSize = true;
-            this.lblSyllabaryAssessmentsCompleted.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSyllabaryAssessmentsCompleted.Location = new System.Drawing.Point(589, 165);
-            this.lblSyllabaryAssessmentsCompleted.Name = "lblSyllabaryAssessmentsCompleted";
-            this.lblSyllabaryAssessmentsCompleted.Size = new System.Drawing.Size(259, 26);
-            this.lblSyllabaryAssessmentsCompleted.TabIndex = 13;
-            this.lblSyllabaryAssessmentsCompleted.Text = "Assessments Completed:";
-            this.lblSyllabaryAssessmentsCompleted.Visible = false;
+            this.lblSyllabaryAssessmentsAttempted.AutoSize = true;
+            this.lblSyllabaryAssessmentsAttempted.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSyllabaryAssessmentsAttempted.Location = new System.Drawing.Point(18, 93);
+            this.lblSyllabaryAssessmentsAttempted.Name = "lblSyllabaryAssessmentsAttempted";
+            this.lblSyllabaryAssessmentsAttempted.Size = new System.Drawing.Size(249, 25);
+            this.lblSyllabaryAssessmentsAttempted.TabIndex = 0;
+            this.lblSyllabaryAssessmentsAttempted.Text = "Assessments Attempted:";
+            this.lblSyllabaryAssessmentsAttempted.Visible = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(210, 87);
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.lblPreviousPhoneticScore);
+            this.groupBox1.Controls.Add(this.lblTopPhoneticScore);
+            this.groupBox1.Controls.Add(this.lblPhoneticAssessmentsAttempted);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(285, 190);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(319, 128);
-            this.groupBox1.TabIndex = 16;
+            this.groupBox1.Size = new System.Drawing.Size(363, 137);
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Phonetic to English";
             // 
             // groupBox2
             // 
-            this.groupBox2.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(579, 87);
+            this.groupBox2.Controls.Add(this.lblPreviousSyllabaryScore);
+            this.groupBox2.Controls.Add(this.lblTopSyllabaryScore);
+            this.groupBox2.Controls.Add(this.lblSyllabaryAssessmentsAttempted);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(785, 190);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(319, 128);
-            this.groupBox2.TabIndex = 17;
+            this.groupBox2.Size = new System.Drawing.Size(363, 137);
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Syllabary";
             // 
-            // lblEnglishAssessmentsCompleted
+            // lblEnglishAssessmentsAttempted
             // 
-            this.lblEnglishAssessmentsCompleted.AutoSize = true;
-            this.lblEnglishAssessmentsCompleted.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnglishAssessmentsCompleted.Location = new System.Drawing.Point(219, 308);
-            this.lblEnglishAssessmentsCompleted.Name = "lblEnglishAssessmentsCompleted";
-            this.lblEnglishAssessmentsCompleted.Size = new System.Drawing.Size(259, 26);
-            this.lblEnglishAssessmentsCompleted.TabIndex = 20;
-            this.lblEnglishAssessmentsCompleted.Text = "Assessments Completed:";
-            this.lblEnglishAssessmentsCompleted.Visible = false;
+            this.lblEnglishAssessmentsAttempted.AutoSize = true;
+            this.lblEnglishAssessmentsAttempted.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnglishAssessmentsAttempted.Location = new System.Drawing.Point(18, 93);
+            this.lblEnglishAssessmentsAttempted.Name = "lblEnglishAssessmentsAttempted";
+            this.lblEnglishAssessmentsAttempted.Size = new System.Drawing.Size(249, 25);
+            this.lblEnglishAssessmentsAttempted.TabIndex = 0;
+            this.lblEnglishAssessmentsAttempted.Text = "Assessments Attempted:";
+            this.lblEnglishAssessmentsAttempted.Visible = false;
             // 
             // lblTopEnglishScore
             // 
             this.lblTopEnglishScore.AutoSize = true;
-            this.lblTopEnglishScore.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopEnglishScore.Location = new System.Drawing.Point(219, 282);
+            this.lblTopEnglishScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopEnglishScore.Location = new System.Drawing.Point(18, 67);
             this.lblTopEnglishScore.Name = "lblTopEnglishScore";
-            this.lblTopEnglishScore.Size = new System.Drawing.Size(112, 26);
-            this.lblTopEnglishScore.TabIndex = 19;
+            this.lblTopEnglishScore.Size = new System.Drawing.Size(117, 25);
+            this.lblTopEnglishScore.TabIndex = 0;
             this.lblTopEnglishScore.Text = "Top Score:";
             this.lblTopEnglishScore.Visible = false;
             // 
             // lblPreviousEnglishScore
             // 
             this.lblPreviousEnglishScore.AutoSize = true;
-            this.lblPreviousEnglishScore.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreviousEnglishScore.Location = new System.Drawing.Point(219, 256);
+            this.lblPreviousEnglishScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreviousEnglishScore.Location = new System.Drawing.Point(18, 41);
             this.lblPreviousEnglishScore.Name = "lblPreviousEnglishScore";
-            this.lblPreviousEnglishScore.Size = new System.Drawing.Size(161, 26);
-            this.lblPreviousEnglishScore.TabIndex = 18;
+            this.lblPreviousEnglishScore.Size = new System.Drawing.Size(164, 25);
+            this.lblPreviousEnglishScore.TabIndex = 0;
             this.lblPreviousEnglishScore.Text = "Previous Score:";
             this.lblPreviousEnglishScore.Visible = false;
             // 
             // groupBox3
             // 
-            this.groupBox3.Font = new System.Drawing.Font("Phoreus Cherokee", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(210, 230);
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.lblPreviousEnglishScore);
+            this.groupBox3.Controls.Add(this.lblEnglishAssessmentsAttempted);
+            this.groupBox3.Controls.Add(this.lblTopEnglishScore);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(285, 431);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(319, 128);
-            this.groupBox3.TabIndex = 21;
+            this.groupBox3.Size = new System.Drawing.Size(363, 135);
+            this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "English to Phonetic";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBoxLastName);
+            this.groupBox4.Controls.Add(this.lblLastName);
+            this.groupBox4.Controls.Add(this.btnLoadRecord);
+            this.groupBox4.Controls.Add(this.textBoxFirstName);
+            this.groupBox4.Controls.Add(this.lblFirstName);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(12, 75);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(196, 218);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Record Lookup";
+            // 
+            // textBoxLastName
+            // 
+            this.textBoxLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLastName.Location = new System.Drawing.Point(21, 115);
+            this.textBoxLastName.Name = "textBoxLastName";
+            this.textBoxLastName.Size = new System.Drawing.Size(149, 29);
+            this.textBoxLastName.TabIndex = 2;
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Location = new System.Drawing.Point(17, 88);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(99, 24);
+            this.lblLastName.TabIndex = 0;
+            this.lblLastName.Text = "Last Name";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(616, 686);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 63);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.ReturnToMainMenu);
+            // 
             // Records
             // 
+            this.AcceptButton = this.btnLoadRecord;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1031, 461);
-            this.Controls.Add(this.lblEnglishAssessmentsCompleted);
-            this.Controls.Add(this.lblTopEnglishScore);
-            this.Controls.Add(this.lblPreviousEnglishScore);
+            this.ClientSize = new System.Drawing.Size(1432, 761);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.lblSyllabaryAssessmentsCompleted);
-            this.Controls.Add(this.lblPhoneticAssessmentsCompleted);
             this.Controls.Add(this.lblLearnerLevel);
-            this.Controls.Add(this.btnLoadRecord);
-            this.Controls.Add(this.lblTopSyllabaryScore);
-            this.Controls.Add(this.lblPreviousSyllabaryScore);
-            this.Controls.Add(this.lblTopPhoneticScore);
-            this.Controls.Add(this.lblPreviousPhoneticScore);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.textBoxName);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox4);
             this.ForeColor = System.Drawing.Color.SteelBlue;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Records";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Records";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,8 +378,8 @@ namespace CherokeeStudyTool
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem returnToMainMenuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnToMainMenuToolStripMenuItem1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblPreviousPhoneticScore;
         private System.Windows.Forms.Label lblTopPhoneticScore;
@@ -310,13 +387,17 @@ namespace CherokeeStudyTool
         private System.Windows.Forms.Label lblTopSyllabaryScore;
         private System.Windows.Forms.Button btnLoadRecord;
         private System.Windows.Forms.Label lblLearnerLevel;
-        private System.Windows.Forms.Label lblPhoneticAssessmentsCompleted;
-        private System.Windows.Forms.Label lblSyllabaryAssessmentsCompleted;
+        private System.Windows.Forms.Label lblPhoneticAssessmentsAttempted;
+        private System.Windows.Forms.Label lblSyllabaryAssessmentsAttempted;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label lblEnglishAssessmentsCompleted;
+        private System.Windows.Forms.Label lblEnglishAssessmentsAttempted;
         private System.Windows.Forms.Label lblTopEnglishScore;
         private System.Windows.Forms.Label lblPreviousEnglishScore;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox textBoxLastName;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Button button1;
     }
 }

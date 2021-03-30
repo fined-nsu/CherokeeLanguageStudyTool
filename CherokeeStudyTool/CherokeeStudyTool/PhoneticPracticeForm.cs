@@ -13,24 +13,49 @@ namespace CherokeeStudyTool
         string[] englishWords = new string[30];
         string[] phoneticWords = new string[30];
         string[] syllabaryWords = new string[30];
+        string wordListLocation = @"C:\ProgramData\Fine Software\Resources\WordLists\";
+        string[] wordLists = Directory.GetFiles(@"C:\ProgramData\Fine Software\Resources\WordLists\", "*.txt");
 
         public PhoneticPracticeForm()
         {
             InitializeComponent();
+            LoadWordListsFromResources();
+            ResetListBoxHeight();
         }
 
+        /// <summary>
+        /// A method to allow the import of new word lists for use in the applications. Imported lists are copied to the Resources folder in the applications ProgramData folder.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ImportNewList(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 ofd.Filter = "txt files (*.txt)|*.txt";
+                
 
-                if (ofd.ShowDialog() == DialogResult.OK)
+                if (ofd.ShowDialog() == DialogResult.OK)    //Checks if the file dialog returns OK. Skips if it returns Cancel.
                 {
-                    string filePath = ofd.FileName;
-                    listBoxWordList.Items.Add(System.IO.Path.GetFileNameWithoutExtension(filePath));
+                    string filePath = ofd.FileName; //Stores the path of the user's file to import.
+                    string fileName = filePath.Substring(ofd.InitialDirectory.Length + 1);  //Gets the filename.
+                    string copyPath = @"C:\ProgramData\Fine Software\Resources\" + fileName;    //Stores the path for the applications Resource folder in ProgramData.
+                    listBoxWordList.Items.Add(Path.GetFileNameWithoutExtension(filePath));  //The imported word list file name is added to the listbox so it can be used without reloading the form.
+                    File.Copy(filePath, copyPath, true);    //The imported word list is copied so the user doesn't have to import each time.
                 }
+            }
+        }
+
+        /// <summary>
+        /// Populates the listBox with available word lists from the applications Resources\WordLists folder.
+        /// </summary>
+        private void LoadWordListsFromResources()
+        {
+            foreach (string wordlist in wordLists) //Iterates through each word list filename stored in the wordLists array.
+            {
+                string wordListName = wordlist.Substring(wordListLocation.Length);  //Creates a substring without the file path.
+                listBoxWordList.Items.Add(Path.GetFileNameWithoutExtension(wordListName)); //Adds the file name to the listBox excluding the extension.
             }
         }
 
@@ -43,8 +68,8 @@ namespace CherokeeStudyTool
         {
             ClearLists(); //Clears all lists and arrays before loading a new word list.
             string file = listBoxWordList.SelectedItem.ToString().ToLower(); //Assigns selected word list item text to the string to be passed as a variable to the file path below.
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/WordLists/" + file + ".txt"; //Looks for the file in My Documents/WordLists/.
-            string[] lines = System.IO.File.ReadAllLines(path); //Reads each line from the text file into a string array.
+            string path = @"C:\ProgramData\Fine Software\Resources\WordLists\" + file + ".txt"; //Looks for the file in My Documents/WordLists/.
+            string[] lines = File.ReadAllLines(path); //Reads each line from the text file into a string array.
 
             GetEnglishWords(lines);
             GetPhoneticWords(lines);
@@ -144,8 +169,16 @@ namespace CherokeeStudyTool
             {
                 if (_english != null)
                 {
-                    listBoxEnglish.Items.Add(_english);
-                    listBoxEnglish.Height += 24; //Increase the listbox height based on the number of added items.
+                    if (listBoxEnglish.Height < 28) // Check if the listbox height is less then required for the first item. It is set to zero each time a new list is selected.
+                    {
+                        listBoxEnglish.Items.Add(_english);
+                        listBoxEnglish.Height = 28; // Set the listbox height to 28 for the first item added.
+                    }
+                    else
+                    {
+                        listBoxEnglish.Items.Add(_english);
+                        listBoxEnglish.Height += 24; // Increase the listbox height by 24 for each added item.
+                    }
                 }
             }
 
@@ -153,8 +186,16 @@ namespace CherokeeStudyTool
             {
                 if (_phonetic != null)
                 {
-                    listBoxPhonetic.Items.Add(_phonetic);
-                    listBoxPhonetic.Height += 24;
+                    if (listBoxPhonetic.Height < 28)
+                    {
+                        listBoxPhonetic.Items.Add(_phonetic);
+                        listBoxPhonetic.Height = 28;
+                    }
+                    else
+                    {
+                        listBoxPhonetic.Items.Add(_phonetic);
+                        listBoxPhonetic.Height += 24;
+                    }
                 }
             }
 
@@ -162,8 +203,16 @@ namespace CherokeeStudyTool
             {
                 if (_syllabary != null)
                 {
-                    listBoxSyllabary.Items.Add(_syllabary);
-                    listBoxSyllabary.Height += 24;
+                    if (listBoxSyllabary.Height < 28)
+                    {
+                        listBoxSyllabary.Items.Add(_syllabary);
+                        listBoxSyllabary.Height = 28;
+                    }
+                    else
+                    {
+                        listBoxSyllabary.Items.Add(_syllabary);
+                        listBoxSyllabary.Height += 24;
+                    }
                 }
             }
         }
@@ -178,6 +227,9 @@ namespace CherokeeStudyTool
             listBoxSyllabary.Visible = true;
         }
 
+        /// <summary>
+        /// Create a list combining all of the seperate translation arrays.
+        /// </summary>
         private void WriteToList()
         {
             CherokeeWordList.Clear();
@@ -193,44 +245,40 @@ namespace CherokeeStudyTool
         /// <param name="sentListBox"></param>
         private void PlayCherokeeAudio(object sender, EventArgs e)
         {
-            //bool isAudioAvailable = true;
+            // Requires wmplib. Info available at https://docs.microsoft.com/en-us/windows/win32/wmp/using-the-windows-media-player-control-with-microsoft-visual-studio.
+
             ListBox lb = sender as ListBox;
             if (lb.SelectedItem == null)
             {
                 return;
             }
 
-            WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
-            string wordString = CherokeeWordList[lb.SelectedIndex].English;
-            player.URL = @"https://data.cherokee.org/Cherokee/LexiconSoundFiles/" + wordString + ".mp3";
+            WindowsMediaPlayer player = new WindowsMediaPlayer(); // Creates a new media player.
+            string wordString = CherokeeWordList[lb.SelectedIndex].English;     // Assigns the string stored at the selected listbox index.
+            player.URL = @"https://data.cherokee.org/Cherokee/LexiconSoundFiles/" + wordString + ".mp3";    // Creates a URL to the audio file on the Cherokee Language website.
 
-            try
+            try   // Attempts to play the audio file if it exists.
             {
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(player.URL);
                 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-                if (response.StatusCode == HttpStatusCode.OK)
+                if (response.StatusCode == HttpStatusCode.OK)  // If the site returns a status of OK then the file is played.
                 {
-                    player.controls.play();
-                    label2.Visible = false;
-                }
-                if(WMPPlayState.wmppsTransitioning == player.playState)
-                {
-                    label2.Text = "Playing";
-                    label2.Visible = true;
+                    player.controls.play(); //Plays the audio.
+                    lblAudioStatus.Visible = false; //Hides the audio status label if audio is playing.
                 }
 
                 response.Close();
             }
-            catch (WebException ex)
+            catch (WebException ex)     // If the audio file doesn't exist a message is sent to the audio status label to tell the user the file is unavailable.
             {
-                if (ex.Status == WebExceptionStatus.ProtocolError && ex.Response != null)
+                if (ex.Status == WebExceptionStatus.ProtocolError && ex.Response != null)   //Checks if an error message is received and the respsonse is not null.
                 {
-                    var resp = (HttpWebResponse)ex.Response;
-                    if (resp.StatusCode == HttpStatusCode.NotFound)
+                    var resp = (HttpWebResponse)ex.Response;    //Assigns the exception response as an HttpWebResponse message.
+                    if (resp.StatusCode == HttpStatusCode.NotFound) //If the response code indicates the resource isn't found a message is assigned to the audio status label to indicate the audio is unavailable.
                     {
-                        label2.Text = "Audio Unavailable";
-                        label2.Visible = true;
+                        lblAudioStatus.Text = "Audio Unavailable for " + CherokeeWordList[lb.SelectedIndex].English;    //The file name is included with the message.
+                        lblAudioStatus.Visible = true;  //The label is set to visible.
                     }
                 }
                 else
@@ -239,11 +287,11 @@ namespace CherokeeStudyTool
         }
 
         /// <summary>
-        /// Close this form and return to the Phonetic Menu form.
+        /// Close the Phonetic Practice form and return to the Main Menu form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void GoToPhoneticMenu(object sender, EventArgs e)
+        private void GoToMainMenu(object sender, EventArgs e)
         {
             this.Close();
         }

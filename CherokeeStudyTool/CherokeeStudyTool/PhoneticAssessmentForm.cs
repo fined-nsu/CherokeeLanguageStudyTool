@@ -7,7 +7,7 @@ namespace CherokeeStudyTool
 {
     public partial class PhoneticAssessmentForm : Form
     {
-        UserRecords phoneticRecord = new UserRecords(MainMenuForm.username);
+        UserRecords phoneticRecord = new UserRecords(MainMenuForm.firstname, MainMenuForm.lastname);
         List<Cherokee> CherokeeWordList = new List<Cherokee>();
         List<Cherokee> RandomOrderWords = new List<Cherokee>();
         private string[] englishWords = new string[150];
@@ -23,7 +23,7 @@ namespace CherokeeStudyTool
         {
             InitializeComponent();
             ReadWordList();
-            phoneticRecord.LoadUserRecord();
+            phoneticRecord.LoadUserRecord(phoneticRecord);
         }
 
         /// <summary>
@@ -33,14 +33,22 @@ namespace CherokeeStudyTool
         /// <param name="e"></param>
         private void BeginRound(object sender, EventArgs e)
         {
-            minutesRemaining = 0; //Round timer minute placeholder.
-            secondsRemaining = 20; //Round timer seconds placeholder. Eventually multiple time options will be available.
+            minutesRemaining = 5; //Round timer minute placeholder.
+            secondsRemaining = 30; //Round timer seconds placeholder. Eventually multiple time options will be available.
             score = 0; //Resets the score when a round starts
 
-            lblTopScore.Text = "High Score: " + phoneticRecord.topPhoneticScore.ToString();
+            timerPhoneticAssessment.Enabled = true;
+            btnBegin.Enabled = false;
+            btnEnd.Enabled = true;
 
-            timerPhoneticAssessment.Enabled = (checkBox2.Checked) ? true : false;
-            if (!timerPhoneticAssessment.Enabled) { lblTimer.Text = "Untimed"; }
+            if (checkBox3.Checked)
+            {
+                lblTopScore.Text = "High Score: " + phoneticRecord.TopEnglishScore;
+            }
+            else
+            {
+                lblTopScore.Text = "High Score: " + phoneticRecord.TopPhoneticScore;
+            }
 
             TextBox[] allTextBoxes = { textBox1, textBox2, textBox3, textBox4, textBox5, textBox6, textBox7, textBox8, textBox9, textBox10 };
             foreach (TextBox tb in allTextBoxes) //Clears and enables each textbox.
@@ -54,6 +62,7 @@ namespace CherokeeStudyTool
             {
                 lb.Visible = true;
             }
+            checkBox3.Enabled = false;
             LoadWords();
         }
 
@@ -62,7 +71,7 @@ namespace CherokeeStudyTool
         /// </summary>
         private void ReadWordList()
         {
-            string path = @"C:\Users\fined\Google Drive\Documents\WordLists\AllWords.txt";
+            string path = @"C:\ProgramData\Fine Software\Resources\AllWords.txt";
             string[] lines = System.IO.File.ReadAllLines(path);
             GetEnglishWords(lines);
             GetPhoneticWords(lines);
@@ -155,7 +164,6 @@ namespace CherokeeStudyTool
             label8.Text = checkBox3.Checked ? RandomOrderWords[7].English.ToString() : RandomOrderWords[7].Phonetic.ToString();
             label9.Text = checkBox3.Checked ? RandomOrderWords[8].English.ToString() : RandomOrderWords[8].Phonetic.ToString();
             label10.Text = checkBox3.Checked ? RandomOrderWords[9].English.ToString() : RandomOrderWords[9].Phonetic.ToString();
-            lblDirections.Text = checkBox3.Checked ? "Enter Phonetic Translation" : "Enter English Translation";
         }
 
         private void PrintLists()
@@ -192,8 +200,13 @@ namespace CherokeeStudyTool
                 if (current.Text.ToLower().Replace(" ","") == CherokeeWordList[matchIndex].Phonetic.ToLower().Replace("-", string.Empty) || current.Text.ToLower() == CherokeeWordList[matchIndex].Phonetic.ToLower())
                 {
                     score++;
-                    lblScore.Text = "Score: " + score;
-                    lblTopScore.Text = "High Score: " + phoneticRecord.topPhoneticScore;
+                    phoneticRecord.PreviousEnglishScore = score;
+                    lblScore.Text = "Current Score: " + score;
+                    if(score > phoneticRecord.TopEnglishScore)
+                    {
+                        phoneticRecord.TopEnglishScore = score;
+                    }
+                    lblTopScore.Text = "High Score: " + phoneticRecord.TopEnglishScore;
                     current.Clear();
                     LoadNewWord(lblMyLabel);
                 }
@@ -210,7 +223,13 @@ namespace CherokeeStudyTool
                 if (current.Text.ToLower() == CherokeeWordList[matchIndex].English.ToLower())
                 {
                     score++;
-                    lblScore.Text = "Score: " + score;
+                    phoneticRecord.PreviousPhoneticScore = score;
+                    lblScore.Text = "Current Score: " + score;
+                    if(score > phoneticRecord.TopPhoneticScore)
+                    {
+                        phoneticRecord.TopPhoneticScore = score;
+                    }
+                    lblTopScore.Text = "High Score: " + phoneticRecord.TopPhoneticScore;
                     current.Clear();
                     LoadNewWord(lblMyLabel);
                 }
@@ -228,32 +247,6 @@ namespace CherokeeStudyTool
             {
                 RoundOver();
             }
-
-            /*Random rnd = new Random();
-            int newIndex = rnd.Next(0, RandomOrderWords.Count); //Generate a random number.
-            string newWord = (checkBox3.Checked) ? RandomOrderWords[newIndex].English : RandomOrderWords[newIndex].Phonetic; //Assign a new word based on the random number.
-            bool wordExists = false;
-            //string newWord = ""; //This string value will be used to store the new word after the check for uniqueness.
-            Label[] labels = { label1, label2, label3, label4, label5, label6, label7, label8, label9, label10 };
-            foreach(Label label in labels) //Check the contents of each currently assigned label to verify new word isn't already assigned.
-            {
-                if (newWord == label.Text) //If new word is already assigned to a label get a new word.
-                {
-                    wordExists = true;
-                }
-                else
-                {
-                    wordExists = false;
-                }
-            }
-            if(wordExists)
-            {
-                LoadNewWord(sentLabel);
-            }
-            else
-            {
-                sentLabel.Text = newWord; //Assign new word to label.
-            }*/
         }
 
         /// <summary>
@@ -292,6 +285,13 @@ namespace CherokeeStudyTool
                 tb.Clear();
                 tb.Enabled = false;
             }
+            checkBox3.Enabled = true;
+            btnBegin.Enabled = true;
+            btnEnd.Enabled = false;
+            minutesRemaining = 0;
+            secondsRemaining = 0;
+            score = 0;
+            timerPhoneticAssessment.Enabled = false;
             RecordPerformance();
         }
 
@@ -299,32 +299,59 @@ namespace CherokeeStudyTool
         {
             if (checkBox3.Checked)
             {
-                phoneticRecord.previousEnglishScore = score;
-                phoneticRecord.completedEnglishAssessments++;
+                phoneticRecord.AttemptedEnglishAssessments++;
             }
             else
             {
-                phoneticRecord.previousPhoneticScore = score;
-                phoneticRecord.completedPhoneticAssessments++;
+                phoneticRecord.AttemptedPhoneticAssessments++;
             }
-            if(phoneticRecord.topEnglishScore < score && checkBox3.Checked)
+            if(phoneticRecord.TopEnglishScore < phoneticRecord.PreviousEnglishScore && checkBox3.Checked)
             {
-                phoneticRecord.topEnglishScore = score;
+                phoneticRecord.TopEnglishScore = phoneticRecord.PreviousEnglishScore;
             }
-            if(phoneticRecord.topPhoneticScore < score && !checkBox3.Checked)
+            if(phoneticRecord.TopPhoneticScore < phoneticRecord.PreviousPhoneticScore && !checkBox3.Checked)
             {
-                phoneticRecord.topPhoneticScore = score;
+                phoneticRecord.TopPhoneticScore = phoneticRecord.PreviousPhoneticScore;
             }
 
-            phoneticRecord.SaveUserRecord();
+            phoneticRecord.SaveUserRecord(phoneticRecord);
         }
+
+        private void ToggleTranslation(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                lblDirections.Text = "Enter Phonetic Translation";
+            }
+            if (!checkBox3.Checked)
+            {
+                lblDirections.Text = "Enter English Translation";
+            }
+        }
+
+        private void EndRound(object sender, EventArgs e)
+        {
+            
+            RoundOver();
+        }
+
+        private void ShowInstructions(object sender, EventArgs e)
+        {
+            HelpForm instructions = new HelpForm();
+            instructions.ShowDialog();
+        }
+
         /// <summary>
-        /// Close the current form and return to the Phonetic Menu Form.
+        /// Close the Phonetic Assessment form and return to the Main Menu.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void GoToPhoneticMenu(object sender, EventArgs e)
+        private void GoToMainMenu(object sender, EventArgs e)
         {
+            if(btnEnd.Enabled)
+            {
+                RoundOver();
+            }
             this.Close();
         }
     }

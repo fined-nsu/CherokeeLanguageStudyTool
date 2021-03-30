@@ -58,118 +58,134 @@ namespace CherokeeStudyTool
             this.lblScore = new System.Windows.Forms.Label();
             this.timerPhoneticAssessment = new System.Windows.Forms.Timer(this.components);
             this.lblTimer = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.lblDirections = new System.Windows.Forms.Label();
             this.lblTopScore = new System.Windows.Forms.Label();
+            this.btnEnd = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnClose = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(377, 149);
+            this.label1.Location = new System.Drawing.Point(377, 143);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Word1";
+            this.label1.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(377, 189);
+            this.label2.Location = new System.Drawing.Point(377, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "Word2";
+            this.label2.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(377, 227);
+            this.label3.Location = new System.Drawing.Point(377, 253);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 29);
             this.label3.TabIndex = 0;
             this.label3.Text = "Word3";
+            this.label3.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(377, 266);
+            this.label4.Location = new System.Drawing.Point(377, 308);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 29);
             this.label4.TabIndex = 0;
             this.label4.Text = "Word4";
+            this.label4.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(377, 305);
+            this.label5.Location = new System.Drawing.Point(377, 363);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 29);
             this.label5.TabIndex = 0;
             this.label5.Text = "Word5";
+            this.label5.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(377, 344);
+            this.label6.Location = new System.Drawing.Point(377, 418);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 29);
             this.label6.TabIndex = 0;
             this.label6.Text = "Word6";
+            this.label6.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(377, 383);
+            this.label7.Location = new System.Drawing.Point(377, 473);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 29);
             this.label7.TabIndex = 0;
             this.label7.Text = "Word7";
+            this.label7.Visible = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(377, 422);
+            this.label8.Location = new System.Drawing.Point(377, 528);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 29);
             this.label8.TabIndex = 0;
             this.label8.Text = "Word8";
+            this.label8.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(377, 461);
+            this.label9.Location = new System.Drawing.Point(377, 583);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 29);
             this.label9.TabIndex = 0;
             this.label9.Text = "Word9";
+            this.label9.Visible = false;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(377, 500);
+            this.label10.Location = new System.Drawing.Point(377, 638);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(97, 29);
             this.label10.TabIndex = 0;
             this.label10.Text = "Word10";
+            this.label10.Visible = false;
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.SteelBlue;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1432, 24);
@@ -189,15 +205,15 @@ namespace CherokeeStudyTool
             this.returnToPhoneticMenuToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
             this.returnToPhoneticMenuToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.returnToPhoneticMenuToolStripMenuItem.Name = "returnToPhoneticMenuToolStripMenuItem";
-            this.returnToPhoneticMenuToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.returnToPhoneticMenuToolStripMenuItem.Text = "Return To Phonetic Menu";
-            this.returnToPhoneticMenuToolStripMenuItem.Click += new System.EventHandler(this.GoToPhoneticMenu);
+            this.returnToPhoneticMenuToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.returnToPhoneticMenuToolStripMenuItem.Text = "Return To Main Menu";
+            this.returnToPhoneticMenuToolStripMenuItem.Click += new System.EventHandler(this.GoToMainMenu);
             // 
             // textBox1
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(782, 151);
+            this.textBox1.Location = new System.Drawing.Point(782, 153);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(276, 29);
             this.textBox1.TabIndex = 1;
@@ -208,7 +224,7 @@ namespace CherokeeStudyTool
             // 
             this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(782, 191);
+            this.textBox2.Location = new System.Drawing.Point(782, 209);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(276, 29);
             this.textBox2.TabIndex = 2;
@@ -219,7 +235,7 @@ namespace CherokeeStudyTool
             // 
             this.textBox3.Enabled = false;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(782, 229);
+            this.textBox3.Location = new System.Drawing.Point(782, 263);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(276, 29);
             this.textBox3.TabIndex = 3;
@@ -230,7 +246,7 @@ namespace CherokeeStudyTool
             // 
             this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(782, 268);
+            this.textBox4.Location = new System.Drawing.Point(782, 318);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(276, 29);
             this.textBox4.TabIndex = 4;
@@ -241,7 +257,7 @@ namespace CherokeeStudyTool
             // 
             this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(782, 308);
+            this.textBox5.Location = new System.Drawing.Point(782, 374);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(276, 29);
             this.textBox5.TabIndex = 5;
@@ -252,7 +268,7 @@ namespace CherokeeStudyTool
             // 
             this.textBox6.Enabled = false;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(782, 346);
+            this.textBox6.Location = new System.Drawing.Point(782, 428);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(276, 29);
             this.textBox6.TabIndex = 6;
@@ -263,7 +279,7 @@ namespace CherokeeStudyTool
             // 
             this.textBox7.Enabled = false;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(782, 385);
+            this.textBox7.Location = new System.Drawing.Point(782, 483);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(276, 29);
             this.textBox7.TabIndex = 7;
@@ -274,7 +290,7 @@ namespace CherokeeStudyTool
             // 
             this.textBox8.Enabled = false;
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(782, 425);
+            this.textBox8.Location = new System.Drawing.Point(782, 539);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(276, 29);
             this.textBox8.TabIndex = 8;
@@ -285,7 +301,7 @@ namespace CherokeeStudyTool
             // 
             this.textBox9.Enabled = false;
             this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(782, 502);
+            this.textBox9.Location = new System.Drawing.Point(782, 648);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(276, 29);
             this.textBox9.TabIndex = 10;
@@ -296,7 +312,7 @@ namespace CherokeeStudyTool
             // 
             this.textBox10.Enabled = false;
             this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(782, 463);
+            this.textBox10.Location = new System.Drawing.Point(782, 593);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(276, 29);
             this.textBox10.TabIndex = 9;
@@ -306,12 +322,12 @@ namespace CherokeeStudyTool
             // btnBegin
             // 
             this.btnBegin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBegin.Location = new System.Drawing.Point(30, 150);
+            this.btnBegin.Location = new System.Drawing.Point(6, 42);
             this.btnBegin.Name = "btnBegin";
-            this.btnBegin.Size = new System.Drawing.Size(112, 42);
+            this.btnBegin.Size = new System.Drawing.Size(120, 42);
             this.btnBegin.TabIndex = 0;
             this.btnBegin.TabStop = false;
-            this.btnBegin.Text = "Begin";
+            this.btnBegin.Text = "Begin Round";
             this.btnBegin.UseVisualStyleBackColor = true;
             this.btnBegin.Click += new System.EventHandler(this.BeginRound);
             // 
@@ -319,11 +335,11 @@ namespace CherokeeStudyTool
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblScore.Location = new System.Drawing.Point(1172, 50);
+            this.lblScore.Location = new System.Drawing.Point(1177, 50);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(92, 25);
+            this.lblScore.Size = new System.Drawing.Size(169, 25);
             this.lblScore.TabIndex = 6;
-            this.lblScore.Text = "Score: 0";
+            this.lblScore.Text = "Current Score: 0";
             // 
             // timerPhoneticAssessment
             // 
@@ -341,27 +357,17 @@ namespace CherokeeStudyTool
             this.lblTimer.Text = "Time Remaining: 0:00";
             this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(30, 89);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(121, 24);
-            this.checkBox2.TabIndex = 13;
-            this.checkBox2.Text = "Enable Timer";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(30, 119);
+            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox3.Location = new System.Drawing.Point(6, 148);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(164, 24);
+            this.checkBox3.Size = new System.Drawing.Size(216, 29);
             this.checkBox3.TabIndex = 14;
             this.checkBox3.Text = "English to Phonetic";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.ToggleTranslation);
             // 
             // lblDirections
             // 
@@ -377,25 +383,79 @@ namespace CherokeeStudyTool
             // 
             this.lblTopScore.AutoSize = true;
             this.lblTopScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopScore.Location = new System.Drawing.Point(1177, 89);
+            this.lblTopScore.Location = new System.Drawing.Point(1177, 80);
             this.lblTopScore.Name = "lblTopScore";
             this.lblTopScore.Size = new System.Drawing.Size(142, 25);
             this.lblTopScore.TabIndex = 16;
             this.lblTopScore.Text = "High Score: 0";
             // 
+            // btnEnd
+            // 
+            this.btnEnd.Enabled = false;
+            this.btnEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnd.Location = new System.Drawing.Point(6, 90);
+            this.btnEnd.Name = "btnEnd";
+            this.btnEnd.Size = new System.Drawing.Size(120, 42);
+            this.btnEnd.TabIndex = 0;
+            this.btnEnd.TabStop = false;
+            this.btnEnd.Text = "End Round";
+            this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.Click += new System.EventHandler(this.EndRound);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnEnd);
+            this.groupBox1.Controls.Add(this.btnBegin);
+            this.groupBox1.Controls.Add(this.checkBox3);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 75);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(231, 206);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Assessment Options";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.instructionsToolStripMenuItem});
+            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // instructionsToolStripMenuItem
+            // 
+            this.instructionsToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
+            this.instructionsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.instructionsToolStripMenuItem.Text = "Instructions";
+            this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.ShowInstructions);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(12, 686);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(200, 63);
+            this.btnClose.TabIndex = 18;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.GoToMainMenu);
+            // 
             // PhoneticAssessmentForm
             // 
+            this.AcceptButton = this.btnBegin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(1432, 681);
+            this.ClientSize = new System.Drawing.Size(1432, 761);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblTopScore);
             this.Controls.Add(this.lblDirections);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.lblScore);
-            this.Controls.Add(this.btnBegin);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox5);
@@ -417,15 +477,19 @@ namespace CherokeeStudyTool
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.SteelBlue;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "PhoneticAssessmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phonetic Assessment";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,9 +524,13 @@ namespace CherokeeStudyTool
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Timer timerPhoneticAssessment;
         private System.Windows.Forms.Label lblTimer;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.Label lblDirections;
         private System.Windows.Forms.Label lblTopScore;
+        private System.Windows.Forms.Button btnEnd;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
+        private System.Windows.Forms.Button btnClose;
     }
 }

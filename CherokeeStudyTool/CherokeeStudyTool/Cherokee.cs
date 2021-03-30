@@ -19,6 +19,9 @@ namespace CherokeeStudyTool
             return "English: " + English + "   Phonetic: " + Phonetic + "    Syllabary: " + Syllabary;
         }
 
+        /// <summary>
+        /// An in order (left to right, top to bottom) listing of Syllabary characters. For possible future use.
+        /// </summary>
         public static IEnumerable<Image> images
         {
             get

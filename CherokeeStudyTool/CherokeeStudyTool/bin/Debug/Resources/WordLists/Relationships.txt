@@ -1,0 +1,15 @@
+Father,a-da-do-da,ᎠᏓᏙᏓ
+Mother,u-ni-tgi,ᎤᏂᏥ
+Wife,u-s-da-yv-hv-s-gi,ᎤᏍᏓᏴᎲᏍᎩ
+Husband,a-s-ga-yv-a-ni-ne-la,ᎠᏍᎦᏯᎠᏂᏁᎳ
+Son,u-we-tsi,ᎤᏪᏥ
+Daughter,u-we-tsi-a-ge-yv,ᎤᏪᏥᎠᎨᏴ
+Brother,di-na-da-nv-tli,ᏗᎾᏓᏅᏟ
+Sister,u-lv,ᎤᎸ
+Grandfather,u-du-du,ᎤᏚᏚ
+Grandmother,u-li-si,ᎤᎵᏏ
+Uncle,e-du-tsi,ᎡᏚᏥ
+Aunt,e-lo-gi,ᎡᎶᎩ
+Cousin,go-hu-s-di-a-na-da-dv-ni,ᎪᎱᏍᏗᎠᎾᏓᏛᏂ
+Chief,u-gv-wi-yu-hi,ᎤᎬᏫᏳᎯ
+Pastor,di-ga-ti-ya,ᏗᎦᏘᏯ

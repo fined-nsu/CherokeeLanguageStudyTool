@@ -1,68 +1,102 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.IO;
 
 namespace CherokeeStudyTool
 {
     public partial class MainMenuForm : Form
     {
-        public static string username = "";
-        UserRecords newUser = new UserRecords(username);
+        public static string firstname = "";
+        public static string lastname = "";
+        UserRecords newUser = new UserRecords(firstname,lastname);
 
         public MainMenuForm()
         {
             InitializeComponent();
         }
-        private void LoadPhoneticMenuForm(object sender, EventArgs e)
-        {
-            username = textBoxUsername.Text;
-            /*string path = @"C:\Users\fined\Google Drive\School\Capstone\Records\" + username + "Record.txt";
-            // If user record doesn't exist a new record is created.
-            if (!File.Exists(path))
-            {
-                newUser.SaveUserRecord();
-            }*/
 
-            PhoneticMenuForm PhoneticMenu = new PhoneticMenuForm();
-            PhoneticMenu.ShowDialog();
+        /// <summary>
+        /// Loads the Phonetic Practice form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoadPhoneticPractice(object sender, EventArgs e)
+        {
+            PhoneticPracticeForm PhoneticStudy = new PhoneticPracticeForm();
+            PhoneticStudy.ShowDialog();
         }
 
-        private void loadSyllabaryForm(object sender, EventArgs e)
+        /// <summary>
+        /// Loads the Phonetic Assessment form and stores the user name entered on the Main Menu form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoadPhoneticAssessment(object sender, EventArgs e)
         {
-            username = textBoxUsername.Text;
+            firstname = textBoxFirstname.Text;
+            lastname = textBoxLastname.Text;
 
-           /* string path = @"C:\Users\fined\Google Drive\School\Capstone\Records\" + username + "Record.txt";
-            // If user record doesn't exist a new record is created.,
-            if (!File.Exists(path))
-            {
-                newUser.SaveUserRecord();
-            }*/
-
-            SyllabaryMenuForm SyllabaryMenu = new SyllabaryMenuForm();
-            SyllabaryMenu.ShowDialog();
+            PhoneticAssessmentForm PhoneticAssessment = new PhoneticAssessmentForm();
+            PhoneticAssessment.ShowDialog();
         }
 
-
-        private void loadList()
+        /// <summary>
+        /// Loads the Syllabary Practice form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoadSyllabaryPractice(object sender, EventArgs e)
         {
-           
+            SyllabaryPracticeForm SyllabaryStudy = new SyllabaryPracticeForm();
+            SyllabaryStudy.ShowDialog();
         }
 
+        /// <summary>
+        /// Loads the Syllabary Assessment form and stores the user name entered on the Main Menu form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoadSyllabaryAssessment(object sender, EventArgs e)
+        {
+            firstname = textBoxFirstname.Text;
+            lastname = textBoxLastname.Text;
 
+            SyllabaryAssessmentForm SyllabaryAssessment = new SyllabaryAssessmentForm();
+            SyllabaryAssessment.ShowDialog();
+        }
+
+        /// <summary>
+        /// Loads the Instructions form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoadHelpForm(object sender, EventArgs e)
         {
             HelpForm instructions = new HelpForm();
             instructions.ShowDialog();
         }
-        private void Exit(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
+        /// <summary>
+        /// Loads the Records form and stores the user name entered on the Main Menu form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoadRecordsForm(object sender, EventArgs e)
         {
+            firstname = textBoxFirstname.Text;
+            lastname = textBoxLastname.Text;
+
             Records userRecords = new Records();
             userRecords.ShowDialog();
+        }
+
+        /// <summary>
+        /// Exits the application.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Exit(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

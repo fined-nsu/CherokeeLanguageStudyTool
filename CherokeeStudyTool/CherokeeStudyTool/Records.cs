@@ -13,11 +13,11 @@ namespace CherokeeStudyTool
 
         public void LoadRecord(object sender, EventArgs e)
         {
-            UserRecords record = new UserRecords(textBoxName.Text);
-            record.LoadUserRecord();
-            if (!record.exists)
+            UserRecords record = new UserRecords(textBoxFirstName.Text, textBoxLastName.Text);
+            record.LoadUserRecord(record);
+            if (!record.Exists)
             {
-                Label[] labels = { lblName, lblPreviousPhoneticScore, lblTopPhoneticScore, lblPhoneticAssessmentsCompleted, lblPreviousSyllabaryScore, lblTopSyllabaryScore, lblSyllabaryAssessmentsCompleted, lblPreviousEnglishScore, lblTopEnglishScore, lblEnglishAssessmentsCompleted, lblLearnerLevel};
+                Label[] labels = { lblName, lblPreviousPhoneticScore, lblTopPhoneticScore, lblPhoneticAssessmentsAttempted, lblPreviousSyllabaryScore, lblTopSyllabaryScore, lblSyllabaryAssessmentsAttempted, lblPreviousEnglishScore, lblTopEnglishScore, lblEnglishAssessmentsAttempted, lblLearnerLevel};
                 foreach (Label label in labels)
                 {
                     label.Visible = false;
@@ -27,22 +27,22 @@ namespace CherokeeStudyTool
             }
             else
             {
-                Label[] labels = { lblName, lblPreviousPhoneticScore, lblTopPhoneticScore, lblPhoneticAssessmentsCompleted, lblPreviousSyllabaryScore, lblTopSyllabaryScore, lblSyllabaryAssessmentsCompleted, lblPreviousEnglishScore, lblTopEnglishScore, lblEnglishAssessmentsCompleted, lblLearnerLevel };
+                Label[] labels = { lblName, lblPreviousPhoneticScore, lblTopPhoneticScore, lblPhoneticAssessmentsAttempted, lblPreviousSyllabaryScore, lblTopSyllabaryScore, lblSyllabaryAssessmentsAttempted, lblPreviousEnglishScore, lblTopEnglishScore, lblEnglishAssessmentsAttempted, lblLearnerLevel };
                 foreach (Label label in labels)
                 {
                     label.Visible = true;
                 }
-                lblName.Text = record.username;
-                lblPreviousPhoneticScore.Text = "Previous Score: " + record.previousPhoneticScore;
-                lblTopPhoneticScore.Text = "Top Score: " + record.topPhoneticScore;
-                lblPhoneticAssessmentsCompleted.Text = "Assessments Completed: " + record.completedPhoneticAssessments;
-                lblPreviousSyllabaryScore.Text = "Previous Score: " + record.previousSyllabaryScore;
-                lblTopSyllabaryScore.Text = "Top Score: " + record.topSyllabaryScore;
-                lblSyllabaryAssessmentsCompleted.Text = "Assessments Completed: " + record.completedSyllabaryAssessments;
-                lblPreviousEnglishScore.Text = "Previous Score: " + record.previousEnglishScore;
-                lblTopEnglishScore.Text = "Top Score: " + record.topEnglishScore;
-                lblEnglishAssessmentsCompleted.Text = "Assessments Completed: " + record.completedEnglishAssessments;
-                lblLearnerLevel.Text = "Level: " + record.learnerLevel;
+                lblName.Text = record.Firstname + " " + record.Lastname;
+                lblPreviousPhoneticScore.Text = "Previous Score: " + record.PreviousPhoneticScore;
+                lblTopPhoneticScore.Text = "Top Score: " + record.TopPhoneticScore;
+                lblPhoneticAssessmentsAttempted.Text = "Assessments Attempted: " + record.AttemptedPhoneticAssessments;
+                lblPreviousSyllabaryScore.Text = "Previous Score: " + record.PreviousSyllabaryScore;
+                lblTopSyllabaryScore.Text = "Top Score: " + record.TopSyllabaryScore;
+                lblSyllabaryAssessmentsAttempted.Text = "Assessments Attempted: " + record.AttemptedSyllabaryAssessments;
+                lblPreviousEnglishScore.Text = "Previous Score: " + record.PreviousEnglishScore;
+                lblTopEnglishScore.Text = "Top Score: " + record.TopEnglishScore;
+                lblEnglishAssessmentsAttempted.Text = "Assessments Attempted: " + record.AttemptedEnglishAssessments;
+                lblLearnerLevel.Text = "Level: " + record.LearnerLevel;
             }
         }
 

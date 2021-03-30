@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CherokeeStudyTool
@@ -13,7 +8,7 @@ namespace CherokeeStudyTool
     
     public partial class SyllabaryAssessmentForm : Form
     {
-        UserRecords syllabaryRecord = new UserRecords(MainMenuForm.username);
+        UserRecords syllabaryRecord = new UserRecords(MainMenuForm.firstname, MainMenuForm.lastname);
         private int minutesRemaining;
         private int secondsRemaining;
         private int score = 0;
@@ -22,7 +17,7 @@ namespace CherokeeStudyTool
         public SyllabaryAssessmentForm()
         {
             InitializeComponent();
-            syllabaryRecord.LoadUserRecord();
+            syllabaryRecord.LoadUserRecord(syllabaryRecord);
         }
 
         /// <summary>
@@ -32,12 +27,17 @@ namespace CherokeeStudyTool
         /// <param name="e"></param>
         private void BeginRound(object sender, EventArgs e)
         {
-            minutesRemaining = 3;
-            secondsRemaining = 5;
+            minutesRemaining = 5;
+            secondsRemaining = 30;
             score = 0;
-            lblHighScore.Text = "High Score: " + syllabaryRecord.topSyllabaryScore;
 
-            timerSyllabaryAssessment.Enabled = (checkBox1.Checked) ? true : false;
+            timerSyllabaryAssessment.Enabled = true;
+            btnBegin.Enabled = false;
+            btnEnd.Enabled = true;
+            
+            lblHighScore.Text = "High Score: " + syllabaryRecord.TopSyllabaryScore;
+
+
             if (!timerSyllabaryAssessment.Enabled) { lblTimer.Text = "Untimed"; }
 
             TextBox[] allTextBoxes = { textBox1, textBox2, textBox3, textBox4 };
@@ -61,7 +61,7 @@ namespace CherokeeStudyTool
         /// </summary>
         private void LoadPhoneticSyllables()
         {
-            string path = @"C:\Users\fined\Google Drive\School\Capstone\Resources\Cherokee Phonetic.txt";
+            string path = @"C:\ProgramData\Fine Software\Resources\Cherokee Phonetic.txt";
             string[] lines = System.IO.File.ReadAllLines(path);
             int k = 0;
             foreach(string line in lines)
@@ -116,8 +116,13 @@ namespace CherokeeStudyTool
             if (current.Text == currentPictureBox.Tag.ToString())
             {
                 score++;
-                lblScore.Text = "Score: " + score;
-                lblHighScore.Text = "High Score: " + syllabaryRecord.topSyllabaryScore;
+                syllabaryRecord.PreviousSyllabaryScore = score;
+                lblScore.Text = "Current Score: " + score;
+                if(score > syllabaryRecord.TopSyllabaryScore)
+                {
+                    syllabaryRecord.TopSyllabaryScore = score;
+                }
+                lblHighScore.Text = "High Score: " + syllabaryRecord.TopSyllabaryScore;
                 current.Clear();
                 LoadNewImage(currentPictureBox);
             }
@@ -162,7 +167,7 @@ namespace CherokeeStudyTool
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Assessment(object sender, EventArgs e)
+        private void AssessmentTimer(object sender, EventArgs e)
         {
             if(minutesRemaining == 0 && secondsRemaining <= 0)
             {
@@ -193,6 +198,12 @@ namespace CherokeeStudyTool
                 tb.Clear();
                 tb.Enabled = false;
             }
+            btnBegin.Enabled = true;
+            btnEnd.Enabled = false;
+            minutesRemaining = 0;
+            secondsRemaining = 0;
+            score = 0;
+            timerSyllabaryAssessment.Enabled = false;
             RecordPerformance();
         }
 
@@ -201,23 +212,42 @@ namespace CherokeeStudyTool
         /// </summary>
         private void RecordPerformance()
         {
-            syllabaryRecord.previousSyllabaryScore = score;
-            syllabaryRecord.completedSyllabaryAssessments++;
+            //syllabaryRecord.previousSyllabaryScore = score;
+            syllabaryRecord.AttemptedSyllabaryAssessments++;
 
-            if (syllabaryRecord.topSyllabaryScore < score)
+            if (syllabaryRecord.TopSyllabaryScore < syllabaryRecord.PreviousSyllabaryScore)
             {
-                syllabaryRecord.topSyllabaryScore = score;
+                syllabaryRecord.TopSyllabaryScore = syllabaryRecord.PreviousSyllabaryScore;
             }
-            syllabaryRecord.SaveUserRecord();
+            syllabaryRecord.SaveUserRecord(syllabaryRecord);
+        }
+        private void EndRound(object sender, EventArgs e)
+        {
+            RoundOver();
         }
 
         /// <summary>
-        /// Closes the current form and returns to the Syllabary menu.
+        /// Load the Instructions form.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void GoToSyllabaryMenu(object sender, EventArgs e)
+        private void ShowInstructions(object sender, EventArgs e)
         {
+            HelpForm instructions = new HelpForm();
+            instructions.ShowDialog();
+        }
+
+        /// <summary>
+        /// Close the Syllabary Assessment form and return to the Main Menu.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GoToMainMenu(object sender, EventArgs e)
+        {
+            if (btnEnd.Enabled)
+            {
+                RoundOver();
+            }
             this.Close();
         }
     }

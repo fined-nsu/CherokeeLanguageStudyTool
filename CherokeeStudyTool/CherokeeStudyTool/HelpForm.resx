@@ -121,10 +121,10 @@
     <value>17, 17</value>
   </metadata>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>The Phonetic learning section consists of two modes. The practice mode allows unlimited time to study English to Phonetic translation. The assessment mode privides a way to test your learning progress through timed translation exercises.</value>
+    <value>The Phonetic learning section consists of a practice mode and an assessment mode. The practice mode allows unlimited time to study English to Phonetic translation. The assessment mode privides a way to test your learning progress through a timed translation exercise. Each correct translation awards one point.</value>
   </data>
   <data name="textBox2.Text" xml:space="preserve">
-    <value>The Syllabary learning section also consists of a study mode and assessment. The practice mode allows you to enter Phonetic syllables and see the corresponding Syllabary character. The assessment mode presents Syllabary characters and awards points for each correct matching Phonetic syllabale that is entered.</value>
+    <value>The Syllabary learning section also consists of a study mode and assessment. The practice mode allows you to enter Phonetic syllables and see the corresponding Syllabary character. The assessment mode presents Syllabary characters and awards one point for each correct Phonetic syllable that is entered.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
