@@ -107,6 +107,7 @@ namespace CherokeeStudyTool
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(149, 29);
             this.textBoxFirstName.TabIndex = 1;
+            this.textBoxFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.VerifyCharacter);
             // 
             // lblName
             // 

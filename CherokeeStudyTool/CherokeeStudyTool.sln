@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CherokeeStudyTool", "CherokeeStudyTool\CherokeeStudyTool.csproj", "{8256F324-47EC-411A-B75B-689E942B205A}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CherokeeLearning", "Setup\Setup.vdproj", "{6D1614F8-5B7E-4C5F-8AB7-F8D921F7FD1E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CherokeeStudyTool", "CherokeeStudyTool.csproj", "{8256F324-47EC-411A-B75B-689E942B205A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +15,6 @@ Global
 		{8256F324-47EC-411A-B75B-689E942B205A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8256F324-47EC-411A-B75B-689E942B205A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8256F324-47EC-411A-B75B-689E942B205A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D1614F8-5B7E-4C5F-8AB7-F8D921F7FD1E}.Debug|Any CPU.ActiveCfg = Debug
-		{6D1614F8-5B7E-4C5F-8AB7-F8D921F7FD1E}.Debug|Any CPU.Build.0 = Debug
-		{6D1614F8-5B7E-4C5F-8AB7-F8D921F7FD1E}.Release|Any CPU.ActiveCfg = Release
-		{6D1614F8-5B7E-4C5F-8AB7-F8D921F7FD1E}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

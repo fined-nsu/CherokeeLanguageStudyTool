@@ -13,8 +13,8 @@ namespace CherokeeStudyTool
         string[] englishWords = new string[30];
         string[] phoneticWords = new string[30];
         string[] syllabaryWords = new string[30];
-        string wordListLocation = @"C:\ProgramData\Fine Software\Resources\WordLists\";
-        string[] wordLists = Directory.GetFiles(@"C:\ProgramData\Fine Software\Resources\WordLists\", "*.txt");
+        string wordListLocation = @".\Resources\WordLists\";
+        string[] wordLists = Directory.GetFiles(@".\Resources\WordLists\", "*.txt");
 
         public PhoneticPracticeForm()
         {
@@ -92,7 +92,14 @@ namespace CherokeeStudyTool
                 string[] columns = line.Split(',');
                 for (int j = 0; j< columns.Length; j += 3)
                 {
-                    englishWords[k++] = columns[j];
+                    if (columns[j] == "")
+                    {
+                        englishWords[k++] = "Not provided";
+                    }
+                    else
+                    {
+                        englishWords[k++] = columns[j];
+                    }
                 }
             }
         }
@@ -110,7 +117,14 @@ namespace CherokeeStudyTool
                 string[] columns = line.Split(',');
                 for (int j = 1; j < columns.Length; j += 3)
                 {
-                    phoneticWords[k++] = columns[j];
+                    if (columns[j] == "")
+                    {
+                        phoneticWords[k++] = "Not provided";
+                    }
+                    else
+                    {
+                        phoneticWords[k++] = columns[j];
+                    }
                 }
             }
         }
@@ -128,7 +142,14 @@ namespace CherokeeStudyTool
                 string[] columns = line.Split(',');
                 for (int j = 2; j < columns.Length; j += 3)
                 {
-                    syllabaryWords[k++] = columns[j];
+                    if (columns[j] == "")
+                    {
+                        syllabaryWords[k++] = "Not provided";
+                    }
+                    else
+                    {
+                        syllabaryWords[k++] = columns[j];
+                    }
                 }
             }
         }
@@ -235,7 +256,29 @@ namespace CherokeeStudyTool
             CherokeeWordList.Clear();
             for (int i = 0; i < listBoxEnglish.Items.Count; i++)
             {
-                CherokeeWordList.Add(new Cherokee() { English = englishWords[i].ToString(), Phonetic = phoneticWords[i].ToString(), Syllabary = syllabaryWords[i].ToString() });
+                if (englishWords[i] == null)
+                {
+                    lblAudioStatus.Text = "Error before English word on line " + (i + 1);
+                    lblAudioStatus.Visible = true;
+                    //listBoxEnglish.Enabled = false;
+                }
+                else if (phoneticWords[i] == null)
+                {
+                    lblAudioStatus.Text = "Error before Phonetic word on line " + (i + 1);
+                    lblAudioStatus.Visible = true;
+                    //listBoxPhonetic.Enabled = false;
+                }
+                else if (syllabaryWords[i] == null)
+                {
+                    lblAudioStatus.Text = "Error before Syllabary word on line " + (i + 1);
+                    lblAudioStatus.Visible = true;
+                    //listBoxSyllabary.Enabled = false;
+                }    
+                else
+                {
+                    CherokeeWordList.Add(new Cherokee() { English = englishWords[i].ToString(), Phonetic = phoneticWords[i].ToString(), Syllabary = syllabaryWords[i].ToString() });
+                    lblAudioStatus.Visible = false;
+                }
             }
         }
 
@@ -254,35 +297,43 @@ namespace CherokeeStudyTool
             }
 
             WindowsMediaPlayer player = new WindowsMediaPlayer(); // Creates a new media player.
-            string wordString = CherokeeWordList[lb.SelectedIndex].English;     // Assigns the string stored at the selected listbox index.
-            player.URL = @"https://data.cherokee.org/Cherokee/LexiconSoundFiles/" + wordString + ".mp3";    // Creates a URL to the audio file on the Cherokee Language website.
-
-            try   // Attempts to play the audio file if it exists.
+            if (lb.SelectedIndex < CherokeeWordList.Count) // Checks whether selected index is in range to prevent errors with improper word list formatting.
             {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(player.URL);
-                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                string wordString = CherokeeWordList[lb.SelectedIndex].English;     // Assigns the string stored at the selected listbox index.
+                player.URL = @"https://data.cherokee.org/Cherokee/LexiconSoundFiles/" + wordString + ".mp3";    // Creates a URL to the audio file on the Cherokee Language website.
 
-                if (response.StatusCode == HttpStatusCode.OK)  // If the site returns a status of OK then the file is played.
-                {
-                    player.controls.play(); //Plays the audio.
-                    lblAudioStatus.Visible = false; //Hides the audio status label if audio is playing.
-                }
 
-                response.Close();
-            }
-            catch (WebException ex)     // If the audio file doesn't exist a message is sent to the audio status label to tell the user the file is unavailable.
-            {
-                if (ex.Status == WebExceptionStatus.ProtocolError && ex.Response != null)   //Checks if an error message is received and the respsonse is not null.
+                try   // Attempts to play the audio file if it exists.
                 {
-                    var resp = (HttpWebResponse)ex.Response;    //Assigns the exception response as an HttpWebResponse message.
-                    if (resp.StatusCode == HttpStatusCode.NotFound) //If the response code indicates the resource isn't found a message is assigned to the audio status label to indicate the audio is unavailable.
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(player.URL);
+                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+                    if (response.StatusCode == HttpStatusCode.OK)  // If the site returns a status of OK then the file is played.
                     {
-                        lblAudioStatus.Text = "Audio Unavailable for " + CherokeeWordList[lb.SelectedIndex].English;    //The file name is included with the message.
-                        lblAudioStatus.Visible = true;  //The label is set to visible.
+                        player.controls.play(); //Plays the audio.
+                        lblAudioStatus.Visible = false; //Hides the audio status label if audio is playing.
                     }
+
+                    response.Close();
                 }
-                else
-                { throw; }
+                catch (WebException ex)     // If the audio file doesn't exist a message is sent to the audio status label to tell the user the file is unavailable.
+                {
+                    if (ex.Status == WebExceptionStatus.ProtocolError && ex.Response != null)   //Checks if an error message is received and the respsonse is not null.
+                    {
+                        var resp = (HttpWebResponse)ex.Response;    //Assigns the exception response as an HttpWebResponse message.
+                        if (resp.StatusCode == HttpStatusCode.NotFound) //If the response code indicates the resource isn't found a message is assigned to the audio status label to indicate the audio is unavailable.
+                        {
+                            lblAudioStatus.Text = "Audio Unavailable for " + CherokeeWordList[lb.SelectedIndex].English;    //The file name is included with the message.
+                            lblAudioStatus.Visible = true;  //The label is set to visible.
+                        }
+                    }
+                    else
+                    { throw; }
+                }
+            }
+            else
+            {
+                lblAudioStatus.Text = "Word list formatting error before line " + (lb.SelectedIndex + 1); //Provide error information if selected index is out of range due to improper word list formatting.
             }
         }
 

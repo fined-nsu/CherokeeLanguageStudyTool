@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions; // See https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-5.0 for more information on using regular expressions.
 using System.Windows.Forms;
 
 namespace CherokeeStudyTool
@@ -7,7 +8,7 @@ namespace CherokeeStudyTool
     {
         public static string firstname = "";
         public static string lastname = "";
-        UserRecords newUser = new UserRecords(firstname,lastname);
+        UserRecords newUser = new UserRecords(firstname, lastname);
 
         public MainMenuForm()
         {
@@ -90,6 +91,20 @@ namespace CherokeeStudyTool
         }
 
         /// <summary>
+        /// Verifies key presses inside the textbox to allow alphanumeric and backspace entries.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBoxVerify_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Regex keyVerify = new Regex(@"[^a-zA-Z0-9\s\b\-]"); // Regular expression to allow entry of lowercase letters, uppercase letters, numbers, and spaces. Also allows the backspace key for error correction.
+            if (keyVerify.IsMatch(e.KeyChar.ToString()))        // Verifies the keypress matches the allowed characters.
+            {
+                e.Handled = true;
+            }
+        }
+
+        /// <summary>
         /// Exits the application.
         /// </summary>
         /// <param name="sender"></param>
@@ -98,5 +113,6 @@ namespace CherokeeStudyTool
         {
             Application.Exit();
         }
+
     }
 }
