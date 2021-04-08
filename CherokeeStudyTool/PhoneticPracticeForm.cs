@@ -13,8 +13,7 @@ namespace CherokeeStudyTool
         string[] englishWords = new string[30];
         string[] phoneticWords = new string[30];
         string[] syllabaryWords = new string[30];
-        string wordListLocation = @".\Resources\WordLists\";
-        string[] wordLists = Directory.GetFiles(@".\Resources\WordLists\", "*.txt");
+
 
         public PhoneticPracticeForm()
         {
@@ -40,7 +39,7 @@ namespace CherokeeStudyTool
                 {
                     string filePath = ofd.FileName; //Stores the path of the user's file to import.
                     string fileName = filePath.Substring(ofd.InitialDirectory.Length + 1);  //Gets the filename.
-                    string copyPath = @"C:\ProgramData\Fine Software\Resources\" + fileName;    //Stores the path for the applications Resource folder in ProgramData.
+                    string copyPath = Program.portableVersion ? Program.resourcesFolderLocationPortable + fileName : Program.resourcesFolderLocation + fileName;    //Stores the path for the applications Resource folder in ProgramData.
                     listBoxWordList.Items.Add(Path.GetFileNameWithoutExtension(filePath));  //The imported word list file name is added to the listbox so it can be used without reloading the form.
                     File.Copy(filePath, copyPath, true);    //The imported word list is copied so the user doesn't have to import each time.
                 }
@@ -52,9 +51,28 @@ namespace CherokeeStudyTool
         /// </summary>
         private void LoadWordListsFromResources()
         {
+            string[] wordLists;
+            if (Program.resourcesFoldersFound)
+            {
+                wordLists = Program.portableVersion ? Directory.GetFiles(Program.wordListsFolderLocationPortable, "*.txt") : Directory.GetFiles(Program.wordListsFolderLocation, "*.txt"); //Allows changing paths by just switching the boolean value for portableVersion.
+            }
+            else
+            {
+                wordLists = Directory.GetFiles(Properties.Settings.Default.customResourcesPath + @"WordLists\", "*.txt"); //Uses directory selected by user if the default locations are not present.
+            }
+
+
             foreach (string wordlist in wordLists) //Iterates through each word list filename stored in the wordLists array.
             {
-                string wordListName = wordlist.Substring(wordListLocation.Length);  //Creates a substring without the file path.
+                string wordListName;
+                if (Program.resourcesFoldersFound)
+                {
+                    wordListName = Program.portableVersion ? wordlist.Substring(Program.wordListsFolderLocationPortable.Length) : wordlist.Substring(Program.wordListsFolderLocation.Length);  //Creates a substring without the file path.
+                }
+                else
+                {
+                    wordListName = wordlist.Substring(Properties.Settings.Default.customResourcesPath.Length);
+                }
                 listBoxWordList.Items.Add(Path.GetFileNameWithoutExtension(wordListName)); //Adds the file name to the listBox excluding the extension.
             }
         }
@@ -68,7 +86,15 @@ namespace CherokeeStudyTool
         {
             ClearLists(); //Clears all lists and arrays before loading a new word list.
             string file = listBoxWordList.SelectedItem.ToString().ToLower(); //Assigns selected word list item text to the string to be passed as a variable to the file path below.
-            string path = @"C:\ProgramData\Fine Software\Resources\WordLists\" + file + ".txt"; //Looks for the file in My Documents/WordLists/.
+            string path;
+            if (Program.resourcesFoldersFound)
+            {
+                path = Program.portableVersion ? Program.wordListsFolderLocationPortable + file + ".txt" : Program.wordListsFolderLocation + file + ".txt"; //Assigns the path to the file.
+            }
+            else
+            {
+                path = Properties.Settings.Default.customResourcesPath + @"WordLists\" + file + ".txt";
+            }
             string[] lines = File.ReadAllLines(path); //Reads each line from the text file into a string array.
 
             GetEnglishWords(lines);
@@ -260,19 +286,16 @@ namespace CherokeeStudyTool
                 {
                     lblAudioStatus.Text = "Error before English word on line " + (i + 1);
                     lblAudioStatus.Visible = true;
-                    //listBoxEnglish.Enabled = false;
                 }
                 else if (phoneticWords[i] == null)
                 {
                     lblAudioStatus.Text = "Error before Phonetic word on line " + (i + 1);
                     lblAudioStatus.Visible = true;
-                    //listBoxPhonetic.Enabled = false;
                 }
                 else if (syllabaryWords[i] == null)
                 {
                     lblAudioStatus.Text = "Error before Syllabary word on line " + (i + 1);
                     lblAudioStatus.Visible = true;
-                    //listBoxSyllabary.Enabled = false;
                 }    
                 else
                 {

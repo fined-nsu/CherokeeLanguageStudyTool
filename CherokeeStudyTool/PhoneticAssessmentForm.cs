@@ -17,7 +17,6 @@ namespace CherokeeStudyTool
         private int minutesRemaining;
         private int secondsRemaining;
         private int counter = 10;
-        
 
         public PhoneticAssessmentForm()
         {
@@ -71,7 +70,15 @@ namespace CherokeeStudyTool
         /// </summary>
         private void ReadWordList()
         {
-            string path = @"C:\ProgramData\Fine Software\Resources\AllWords.txt";
+            string path;
+            if (Program.resourcesFoldersFound)
+            {
+                path = Program.portableVersion ? Program.resourcesFolderLocationPortable + "AllWords.txt" : Program.resourcesFolderLocation + "AllWords.txt";
+            }
+            else
+            {
+                path = Properties.Settings.Default.customResourcesPath + "AllWords.txt";
+            }
             string[] lines = System.IO.File.ReadAllLines(path);
             GetEnglishWords(lines);
             GetPhoneticWords(lines);

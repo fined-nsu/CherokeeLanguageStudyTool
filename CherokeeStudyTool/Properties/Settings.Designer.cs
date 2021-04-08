@@ -22,5 +22,41 @@ namespace CherokeeStudyTool.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Empty")]
+        public string customResourcesPath {
+            get {
+                return ((string)(this["customResourcesPath"]));
+            }
+            set {
+                this["customResourcesPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Empty")]
+        public string customWordListsPath {
+            get {
+                return ((string)(this["customWordListsPath"]));
+            }
+            set {
+                this["customWordListsPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Empty")]
+        public string customRecordsPath {
+            get {
+                return ((string)(this["customRecordsPath"]));
+            }
+            set {
+                this["customRecordsPath"] = value;
+            }
+        }
     }
 }

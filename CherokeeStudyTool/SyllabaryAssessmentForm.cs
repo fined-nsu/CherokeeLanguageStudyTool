@@ -61,7 +61,15 @@ namespace CherokeeStudyTool
         /// </summary>
         private void LoadPhoneticSyllables()
         {
-            string path = @"C:\ProgramData\Fine Software\Resources\Cherokee Phonetic.txt";
+            string path;
+            if (Program.resourcesFoldersFound)
+            {
+                path = Program.portableVersion ? Program.resourcesFolderLocationPortable + "Cherokee Phonetic.txt" : Program.resourcesFolderLocation + "Cherokee Phonetic.txt";
+            }
+            else
+            {
+                path = Properties.Settings.Default.customResourcesPath + "Cherokee Phonetic.txt";
+            }
             string[] lines = System.IO.File.ReadAllLines(path);
             int k = 0;
             foreach(string line in lines)

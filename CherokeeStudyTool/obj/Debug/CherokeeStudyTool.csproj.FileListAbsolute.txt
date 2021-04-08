@@ -29,7 +29,6 @@ C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeSt
 C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\bin\Debug\CherokeeStudyTool.exe.config
 C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\bin\Debug\CherokeeStudyTool.exe
 C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\bin\Debug\CherokeeStudyTool.pdb
-C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.csprojAssemblyReference.cache
 C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\obj\Debug\Interop.WMPLib.dll
 C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.csproj.ResolveComReference.cache
 C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.HelpForm.resources

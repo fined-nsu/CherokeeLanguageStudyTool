@@ -1,6 +1,0 @@
-Happy,a-li-he-li-s-di,ᎠᎵᎮᎵᏍᏗ
-Sad,u-we-do-li-s-di,ᎤᏪᏙᎵᏍᏗ
-Excited,u-s-ga-s-da-ne-lv,ᎤᏍᎦᏍᏓᏁᎸ
-Angry,u-ha-hna-lv,ᎤᎭᎿᎸ
-Mad,u-hna-lv-hi,ᎤᎿᎸᎯ
-Scared,u-s-ga-s-da-ne-lv-gi,ᎤᏍᎦᏍᏓᏁᎸᎩ

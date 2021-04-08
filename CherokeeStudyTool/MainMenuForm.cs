@@ -13,6 +13,8 @@ namespace CherokeeStudyTool
         public MainMenuForm()
         {
             InitializeComponent();
+            Program.CheckResources();
+            Console.WriteLine(Properties.Settings.Default.customResourcesPath);
         }
 
         /// <summary>

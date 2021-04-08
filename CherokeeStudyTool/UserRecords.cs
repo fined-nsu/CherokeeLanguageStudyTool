@@ -62,7 +62,15 @@ namespace CherokeeStudyTool
             string username = Firstname + Lastname;
             if (username != "")
             {
-                string path = @"C:\ProgramData\Fine Software\Records\" + username + "Record.txt";
+                string path;
+                if (Program.recordsFoldersFound)
+                {
+                    path = Program.portableVersion ? Program.recordsFolderLocationPortable + username + "Record.txt" : Program.recordsFolderLocation + username + "Record.txt";
+                }
+                else
+                {
+                    path = Properties.Settings.Default.customRecordsPath;
+                }
                 Stream stream = new FileStream(path, FileMode.Create, FileAccess.Write);
                 formatter.Serialize(stream, _record);
                 stream.Close();
@@ -75,7 +83,15 @@ namespace CherokeeStudyTool
         public void LoadUserRecord(UserRecords _record)
         {
             IFormatter formatter = new BinaryFormatter();
-            string path = @"C:\ProgramData\Fine Software\Records\" + Firstname + Lastname + "Record.txt";
+            string path;
+            if (Program.recordsFoldersFound)
+            {
+                path = Program.portableVersion ? Program.recordsFolderLocationPortable + Firstname + Lastname + "Record.txt" : Program.recordsFolderLocation + Firstname + Lastname + "Record.txt";
+            }
+            else
+            {
+                path = Properties.Settings.Default.customRecordsPath + Firstname + Lastname + "Record.txt";
+            }
             if (File.Exists(path))
             {
                 Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
