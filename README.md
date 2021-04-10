@@ -68,7 +68,7 @@ Using the MIT License - See [LICENSE][LICENSE]
 [README Usage Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#Usage
 [README Instructions Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#Instructions
 [README License Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#License
-[LICENSE]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/LICENSE/LICENSE
+[LICENSE]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/Licensing/LICENSE
 [Project ZIP file]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/archive/refs/heads/main.zip
 [Main Menu]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/MainMenu.png
 [Phonetic Practice]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main//misc/PhoneticPractice.gif
