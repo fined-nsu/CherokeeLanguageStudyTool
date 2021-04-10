@@ -71,9 +71,9 @@ Using the MIT License - See [LICENSE][LICENSE]
 [LICENSE]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/LICENSE/LICENSE
 [Project ZIP file]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/archive/refs/heads/main.zip
 [Main Menu]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/MainMenu.png
-[Phonetic Practice]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main//misc/PhoneticPractice.png
-[Phonetic Assessment]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/PhoneticAssessment.png
-[Syllabary Practice]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/SyllabaryPractice.png
-[Syllabary Assessment]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/SyllabaryAssessment.png
+[Phonetic Practice]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main//misc/PhoneticPractice.gif
+[Phonetic Assessment]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/PhoneticAssessment.gif
+[Syllabary Practice]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/SyllabaryPractice.gif
+[Syllabary Assessment]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/SyllabaryAssessment.gif
 [Records Found]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/RecordsFound.png
 [Records Not Found]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/RecordsNotFound.png
