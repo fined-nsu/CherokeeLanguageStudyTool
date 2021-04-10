@@ -22,7 +22,17 @@ The installable version of the application is available as LanguageToolSetup.msi
 A readme file is also included with some brief information about the program.
 
 ### Setting up for development
-Clone the repository or [download the project zip file][Project ZIP file].
+For instructions cloning the project directly within Visual Studio 2019 see these instructions from Microsoft: [Open a project from a repo](https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-open-project-from-repo-visual-studio-2019?view=vs-2019&tabs=vs168later)
+
+Within GitHub Desktop the repository can be cloned using the following steps:
+1. Select File
+2. Select Clone Repository...
+3. Select the URL tab
+4. Enter https://github.com/fined-nsu/CherokeeLanguageStudyTool
+5. Choose a local path to save the repository on your computer
+6. Select the Clone button
+
+Alternatively [download the project zip file][Project ZIP file] and decompress it. Locate the solution file CherokeeStudyTool.sln within the decompressed folder and open it with Visual Studio.
 
 ### Usage
 

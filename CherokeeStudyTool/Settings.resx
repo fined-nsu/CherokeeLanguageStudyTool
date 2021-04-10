@@ -120,16 +120,6 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="textBoxPhonetic.Text" xml:space="preserve">
-    <value>The Phonetic practice mode allows unlimited time to study English to Phonetic translation. Several word lists have been included along with support for importing user created lists. Each word list has the English, Phonetic, and Syllabary translation of the word displayed separately. When clicking on a word an audio file is played, if available, demonstrating the pronunciation in Cherokee.
-
-The Phonetic assessment mode provides a way to test your learning progress through a timed translation exercise. By default the words are displayed in Cherokee Phonetic and the English translation is entered into the textbox next to the word. Optionally the translation can be reversed with the English word listed and the Phonetic word entered into the textbox. Phonetic word entry can be done with or without spaces or hyphens separating each syllable. Each correct translation awards one point. The assessment has a timer with five minutes and thirty seconds which starts counting down when the Begin Round button is clicked. The round ends when the timer reaches zero seconds remaining or the user clicks the End Round button. The top score for the user can be saved as long as the name was entered on the main menu before beginning the assessment round.</value>
-  </data>
-  <data name="textBoxSyllabary.Text" xml:space="preserve">
-    <value>The Syllabary practice mode allows the user to enter Phonetic syllables into any of the eight textboxes and see the corresponding Syllabary glyph displayed above the textbox. This mode is untimed and each textbox can be changed to allow another Syllabary glyph image to be displayed. Images are only displayed if the entered Phonetic text matches a Syllabary glyph and the image disappears if the text is changed to something that does not match.
-
-The Syllabary assessment mode presents Syllabary glyph images and allows the user to enter text into the textbox below each image. Upon matching the correct Phonetic syllable to the displayed image the user is awarded one point and a new image is loaded. The assessment begins with five minutes and thirty seconds on the timer and continues until the timer has reached zero seconds remaining. The user can also click the End Round button to stop early. The top score for the user can be saved as long as a name was entered on the main menu before beginning the assessment round.</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

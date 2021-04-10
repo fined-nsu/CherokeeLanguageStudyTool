@@ -38,8 +38,16 @@ namespace CherokeeStudyTool
                 if (ofd.ShowDialog() == DialogResult.OK)    //Checks if the file dialog returns OK. Skips if it returns Cancel.
                 {
                     string filePath = ofd.FileName; //Stores the path of the user's file to import.
-                    string fileName = filePath.Substring(ofd.InitialDirectory.Length + 1);  //Gets the filename.
-                    string copyPath = Program.portableVersion ? Program.resourcesFolderLocationPortable + fileName : Program.resourcesFolderLocation + fileName;    //Stores the path for the applications Resource folder in ProgramData.
+                    string fileName = Path.GetFileName(filePath);  //Gets the filename.
+                    string copyPath;
+                    if (Program.wordListsFoldersFound)
+                    {
+                        copyPath = Program.portableVersion ? Program.wordListsFolderLocationPortable + fileName : Program.wordListsFolderLocation + fileName;    //Stores the path for the applications Resource folder in ProgramData.
+                    }
+                    else
+                    {
+                        copyPath = Properties.Settings.Default.customWordListsPath + fileName;
+                    }
                     listBoxWordList.Items.Add(Path.GetFileNameWithoutExtension(filePath));  //The imported word list file name is added to the listbox so it can be used without reloading the form.
                     File.Copy(filePath, copyPath, true);    //The imported word list is copied so the user doesn't have to import each time.
                 }
@@ -52,20 +60,20 @@ namespace CherokeeStudyTool
         private void LoadWordListsFromResources()
         {
             string[] wordLists;
-            if (Program.resourcesFoldersFound)
+            if (Program.wordListsFoldersFound)
             {
                 wordLists = Program.portableVersion ? Directory.GetFiles(Program.wordListsFolderLocationPortable, "*.txt") : Directory.GetFiles(Program.wordListsFolderLocation, "*.txt"); //Allows changing paths by just switching the boolean value for portableVersion.
             }
             else
             {
-                wordLists = Directory.GetFiles(Properties.Settings.Default.customResourcesPath + @"WordLists\", "*.txt"); //Uses directory selected by user if the default locations are not present.
+                wordLists = Directory.GetFiles(Properties.Settings.Default.customWordListsPath, "*.txt"); //Uses directory selected by user if the default locations are not present.
             }
 
 
             foreach (string wordlist in wordLists) //Iterates through each word list filename stored in the wordLists array.
             {
                 string wordListName;
-                if (Program.resourcesFoldersFound)
+                if (Program.wordListsFoldersFound)
                 {
                     wordListName = Program.portableVersion ? wordlist.Substring(Program.wordListsFolderLocationPortable.Length) : wordlist.Substring(Program.wordListsFolderLocation.Length);  //Creates a substring without the file path.
                 }
@@ -93,7 +101,7 @@ namespace CherokeeStudyTool
             }
             else
             {
-                path = Properties.Settings.Default.customResourcesPath + @"WordLists\" + file + ".txt";
+                path = Properties.Settings.Default.customWordListsPath + @"WordLists\" + file + ".txt";
             }
             string[] lines = File.ReadAllLines(path); //Reads each line from the text file into a string array.
 

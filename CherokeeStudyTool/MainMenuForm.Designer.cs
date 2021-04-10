@@ -37,6 +37,8 @@ namespace CherokeeStudyTool
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +48,9 @@ namespace CherokeeStudyTool
             this.phoneticPracticeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phoneticAssessmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBoxSyllabary = new System.Windows.Forms.PictureBox();
+            this.contextMenuStripSyllabary = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.syllabaryPracticeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.syllabaryAssessmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPhoneticPractice = new System.Windows.Forms.Button();
             this.btnPhoneticAssessment = new System.Windows.Forms.Button();
             this.btnSyllabaryAssessment = new System.Windows.Forms.Button();
@@ -59,18 +64,15 @@ namespace CherokeeStudyTool
             this.btnExit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.contextMenuStripSyllabary = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.syllabaryPracticeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.syllabaryAssessmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhonetic)).BeginInit();
             this.contextMenuStripPhonetic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyllabary)).BeginInit();
+            this.contextMenuStripSyllabary.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.contextMenuStripSyllabary.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -118,7 +120,9 @@ namespace CherokeeStudyTool
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.instructionsToolStripMenuItem});
+            this.instructionsToolStripMenuItem,
+            this.settingsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
@@ -129,9 +133,27 @@ namespace CherokeeStudyTool
             this.instructionsToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
             this.instructionsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.instructionsToolStripMenuItem.Text = "Instructions";
             this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.LoadHelpForm);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
+            this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.LoadSettingsForm);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.BackColor = System.Drawing.Color.SteelBlue;
+            this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.LoadAboutForm);
             // 
             // fileToolStripMenuItem
             // 
@@ -218,6 +240,28 @@ namespace CherokeeStudyTool
             this.pictureBoxSyllabary.TabIndex = 1;
             this.pictureBoxSyllabary.TabStop = false;
             this.toolTip1.SetToolTip(this.pictureBoxSyllabary, "Right click to display options or select an option below.");
+            // 
+            // contextMenuStripSyllabary
+            // 
+            this.contextMenuStripSyllabary.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.syllabaryPracticeToolStripMenuItem,
+            this.syllabaryAssessmentToolStripMenuItem});
+            this.contextMenuStripSyllabary.Name = "contextMenuStrip2";
+            this.contextMenuStripSyllabary.Size = new System.Drawing.Size(187, 48);
+            // 
+            // syllabaryPracticeToolStripMenuItem
+            // 
+            this.syllabaryPracticeToolStripMenuItem.Name = "syllabaryPracticeToolStripMenuItem";
+            this.syllabaryPracticeToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.syllabaryPracticeToolStripMenuItem.Text = "Syllabary Practice";
+            this.syllabaryPracticeToolStripMenuItem.Click += new System.EventHandler(this.LoadSyllabaryPractice);
+            // 
+            // syllabaryAssessmentToolStripMenuItem
+            // 
+            this.syllabaryAssessmentToolStripMenuItem.Name = "syllabaryAssessmentToolStripMenuItem";
+            this.syllabaryAssessmentToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.syllabaryAssessmentToolStripMenuItem.Text = "Syllabary Assessment";
+            this.syllabaryAssessmentToolStripMenuItem.Click += new System.EventHandler(this.LoadSyllabaryAssessment);
             // 
             // btnPhoneticPractice
             // 
@@ -370,28 +414,6 @@ namespace CherokeeStudyTool
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Syllabary";
             // 
-            // contextMenuStripSyllabary
-            // 
-            this.contextMenuStripSyllabary.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.syllabaryPracticeToolStripMenuItem,
-            this.syllabaryAssessmentToolStripMenuItem});
-            this.contextMenuStripSyllabary.Name = "contextMenuStrip2";
-            this.contextMenuStripSyllabary.Size = new System.Drawing.Size(187, 48);
-            // 
-            // syllabaryPracticeToolStripMenuItem
-            // 
-            this.syllabaryPracticeToolStripMenuItem.Name = "syllabaryPracticeToolStripMenuItem";
-            this.syllabaryPracticeToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.syllabaryPracticeToolStripMenuItem.Text = "Syllabary Practice";
-            this.syllabaryPracticeToolStripMenuItem.Click += new System.EventHandler(this.LoadSyllabaryPractice);
-            // 
-            // syllabaryAssessmentToolStripMenuItem
-            // 
-            this.syllabaryAssessmentToolStripMenuItem.Name = "syllabaryAssessmentToolStripMenuItem";
-            this.syllabaryAssessmentToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.syllabaryAssessmentToolStripMenuItem.Text = "Syllabary Assessment";
-            this.syllabaryAssessmentToolStripMenuItem.Click += new System.EventHandler(this.LoadSyllabaryAssessment);
-            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,11 +440,11 @@ namespace CherokeeStudyTool
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhonetic)).EndInit();
             this.contextMenuStripPhonetic.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSyllabary)).EndInit();
+            this.contextMenuStripSyllabary.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.contextMenuStripSyllabary.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,6 +484,8 @@ namespace CherokeeStudyTool
         private System.Windows.Forms.ToolStripMenuItem syllabaryPracticeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem syllabaryAssessmentToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 

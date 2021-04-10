@@ -107,6 +107,28 @@ namespace CherokeeStudyTool
         }
 
         /// <summary>
+        /// Load the Settings form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoadSettingsForm(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.ShowDialog();
+        }
+
+        /// <summary>
+        /// Load the About form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LoadAboutForm(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
+        }
+
+        /// <summary>
         /// Exits the application.
         /// </summary>
         /// <param name="sender"></param>

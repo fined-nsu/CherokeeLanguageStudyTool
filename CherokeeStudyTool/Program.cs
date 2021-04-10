@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
@@ -12,19 +9,16 @@ namespace CherokeeStudyTool
         public static bool portableVersion = false;
 
         //Installable version locations
-        public static string resourcesFolderLocation = @"C:\ProgramData\Fine Software\Resources\";
-        public static string wordListsFolderLocation = @"C:\ProgramData\Fine Software\Resources\WordLists\";
-        public static string recordsFolderLocation = @"C:\ProgramData\Fine Software\Records\";
+        public static readonly string resourcesFolderLocation = @"C:\ProgramData\Fine Software\Resources\";
+        public static readonly string wordListsFolderLocation = @"C:\ProgramData\Fine Software\Resources\WordLists\";
+        public static readonly string recordsFolderLocation = @"C:\ProgramData\Fine Software\Records\";
 
         //Portable version locations
         public static string resourcesFolderLocationPortable = @".\Resources\";
         public static string wordListsFolderLocationPortable = @".\Resources\WordLists\";
         public static string recordsFolderLocationPortable = @".\Records\";
 
-        //public static string customResourcesPath;
-        //public static string customWordListsPath;
-        //public static string customRecordsPath;
-
+        //Boolean values to track if necessary directories are found
         static bool resourcesExists = false;
         static bool resourcesExistsPortable = false;
         static bool wordListsExists = false;
@@ -32,9 +26,9 @@ namespace CherokeeStudyTool
         static bool recordsExists = false;
         static bool recordsExistsPortable = false;
         
-        public static bool resourcesFoldersFound;
-        public static bool wordListFoldersFound;
-        public static bool recordsFoldersFound;
+        public static bool resourcesFoldersFound = false;
+        public static bool wordListsFoldersFound = false;
+        public static bool recordsFoldersFound = false;
         static bool customResourcesFolderFound = false;
         static bool customWordListsFolderFound = false;
         static bool customRecordsFolderFound = false;
@@ -50,6 +44,9 @@ namespace CherokeeStudyTool
             Application.Run(new MainMenuForm());
         }
 
+        /// <summary>
+        /// Check if paths to necessary folders exist. If not prompt for manual selection.
+        /// </summary>
         public static void CheckResources()
         {
             if (portableVersion)
@@ -83,9 +80,9 @@ namespace CherokeeStudyTool
                 }
             }
 
-            resourcesFoldersFound = resourcesExists && resourcesExistsPortable;
-            wordListFoldersFound = wordListsExists && wordListsExistsPortable;
-            recordsFoldersFound = recordsExists && recordsExistsPortable;
+            resourcesFoldersFound = resourcesExists || resourcesExistsPortable;
+            wordListsFoldersFound = wordListsExists || wordListsExistsPortable;
+            recordsFoldersFound = recordsExists || recordsExistsPortable;
 
             CheckCustomPaths();
 
@@ -102,7 +99,7 @@ namespace CherokeeStudyTool
                 }
             }
 
-            if(!wordListFoldersFound && !customWordListsFolderFound)
+            if(!wordListsFoldersFound && !customWordListsFolderFound)
             {
                 using (FolderBrowserDialog fbd = new FolderBrowserDialog())
                 {
@@ -128,6 +125,10 @@ namespace CherokeeStudyTool
             }
             Properties.Settings.Default.Save();
         }
+
+        /// <summary>
+        /// Checks if the previously set custom folder path still exists
+        /// </summary>
         public static void CheckCustomPaths()
         {
             if(Directory.Exists(Properties.Settings.Default.customResourcesPath))
