@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.IO;
 using WMPLib;
 
-namespace CherokeeStudyTool
+namespace CherokeeLanguageLearningTool
 {
     public partial class PhoneticPracticeForm : Form
     {

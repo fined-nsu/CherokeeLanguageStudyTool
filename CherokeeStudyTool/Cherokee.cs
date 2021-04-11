@@ -5,7 +5,7 @@ using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
 
-namespace CherokeeStudyTool
+namespace CherokeeLanguageLearningTool
 {
     public class Cherokee
     {

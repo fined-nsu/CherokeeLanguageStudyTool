@@ -1,5 +1,5 @@
 ﻿
-namespace CherokeeStudyTool
+namespace CherokeeLanguageLearningTool
 {
     partial class About
     {
@@ -167,10 +167,10 @@ namespace CherokeeStudyTool
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(206, 462);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(881, 20);
+            this.label4.Size = new System.Drawing.Size(1107, 20);
             this.label4.TabIndex = 5;
             this.label4.Text = "Beta Testers: Brandon Thompson, Tiffany Muskrat, Mandy Tucker, Tomi Kirkpatrick, " +
-    "Jessica Soap, Kari Fine, and my children";
+    "Jessica Soap, my fellow capstone classmates, Kari Fine, and my children";
             // 
             // label5
             // 

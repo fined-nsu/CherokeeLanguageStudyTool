@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 
-namespace CherokeeStudyTool
+namespace CherokeeLanguageLearningTool
 {
     public partial class Settings : Form
     {
@@ -15,7 +15,7 @@ namespace CherokeeStudyTool
         }
 
         /// <summary>
-        /// Load current path information in the textBoxes.
+        /// Load current path information in the textBoxes. Sets text to "Not Set" if the path is empty.
         /// </summary>
         private void LoadInfo()
         {
@@ -135,7 +135,7 @@ namespace CherokeeStudyTool
         {
             string fileName = listBoxWordList.SelectedItem.ToString();
             Console.WriteLine(currentPath + fileName);
-            File.Delete(currentPath + fileName + ".txt");
+            File.Delete(currentPath + fileName + ".txt");   // Information about deleting files: https://docs.microsoft.com/en-us/dotnet/api/system.io.file.delete?view=net-5.0
             listBoxWordList.Items.Remove(listBoxWordList.SelectedItem);
         }
 
@@ -146,7 +146,7 @@ namespace CherokeeStudyTool
         /// <param name="e"></param>
         private void LocateResourcesFolder(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog())     //Information on FolderBrowserDialog: https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.folderbrowserdialog?view=net-5.0
             {
                 fbd.Description = "Select the Resources folder";
                 if (fbd.ShowDialog() == DialogResult.OK)

@@ -1,5 +1,5 @@
 ﻿
-namespace CherokeeStudyTool
+namespace CherokeeLanguageLearningTool
 {
     partial class PhoneticAssessmentForm
     {

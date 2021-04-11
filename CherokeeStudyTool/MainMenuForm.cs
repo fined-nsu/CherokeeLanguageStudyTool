@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions; // See https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-5.0 for more information on using regular expressions.
 using System.Windows.Forms;
 
-namespace CherokeeStudyTool
+namespace CherokeeLanguageLearningTool
 {
     public partial class MainMenuForm : Form
     {

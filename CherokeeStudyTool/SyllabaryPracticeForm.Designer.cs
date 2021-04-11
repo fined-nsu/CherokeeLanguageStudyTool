@@ -1,5 +1,5 @@
 ﻿
-namespace CherokeeStudyTool
+namespace CherokeeLanguageLearningTool
 {
     partial class SyllabaryPracticeForm
     {
@@ -184,7 +184,7 @@ namespace CherokeeStudyTool
             // pictureBox8
             // 
             this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox8.Image = global::CherokeeStudyTool.Properties.Resources.da;
+            this.pictureBox8.Image = global::CherokeeLanguageLearningTool.Properties.Resources.da;
             this.pictureBox8.Location = new System.Drawing.Point(1243, 265);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(139, 100);
@@ -195,7 +195,7 @@ namespace CherokeeStudyTool
             // pictureBox7
             // 
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox7.Image = global::CherokeeStudyTool.Properties.Resources.da;
+            this.pictureBox7.Image = global::CherokeeLanguageLearningTool.Properties.Resources.da;
             this.pictureBox7.Location = new System.Drawing.Point(1072, 265);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(140, 100);
@@ -206,7 +206,7 @@ namespace CherokeeStudyTool
             // pictureBox6
             // 
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox6.Image = global::CherokeeStudyTool.Properties.Resources.da;
+            this.pictureBox6.Image = global::CherokeeLanguageLearningTool.Properties.Resources.da;
             this.pictureBox6.Location = new System.Drawing.Point(902, 265);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(139, 100);
@@ -217,7 +217,7 @@ namespace CherokeeStudyTool
             // pictureBox5
             // 
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox5.Image = global::CherokeeStudyTool.Properties.Resources.ga;
+            this.pictureBox5.Image = global::CherokeeLanguageLearningTool.Properties.Resources.ga;
             this.pictureBox5.Location = new System.Drawing.Point(732, 265);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(139, 100);
@@ -228,7 +228,7 @@ namespace CherokeeStudyTool
             // pictureBox4
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox4.Image = global::CherokeeStudyTool.Properties.Resources.ni;
+            this.pictureBox4.Image = global::CherokeeLanguageLearningTool.Properties.Resources.ni;
             this.pictureBox4.Location = new System.Drawing.Point(561, 265);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(140, 100);
@@ -239,7 +239,7 @@ namespace CherokeeStudyTool
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox3.Image = global::CherokeeStudyTool.Properties.Resources.yo;
+            this.pictureBox3.Image = global::CherokeeLanguageLearningTool.Properties.Resources.yo;
             this.pictureBox3.Location = new System.Drawing.Point(391, 265);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(139, 100);
@@ -250,7 +250,7 @@ namespace CherokeeStudyTool
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox2.Image = global::CherokeeStudyTool.Properties.Resources.si;
+            this.pictureBox2.Image = global::CherokeeLanguageLearningTool.Properties.Resources.si;
             this.pictureBox2.Location = new System.Drawing.Point(221, 265);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(139, 100);
@@ -261,7 +261,7 @@ namespace CherokeeStudyTool
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::CherokeeStudyTool.Properties.Resources.o;
+            this.pictureBox1.Image = global::CherokeeLanguageLearningTool.Properties.Resources.o;
             this.pictureBox1.Location = new System.Drawing.Point(50, 265);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(140, 100);

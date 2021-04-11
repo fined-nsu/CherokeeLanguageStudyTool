@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8256F324-47EC-411A-B75B-689E942B205A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CherokeeStudyTool</RootNamespace>
-    <AssemblyName>CherokeeStudyTool</AssemblyName>
+    <RootNamespace>CherokeeLanguageLearningTool</RootNamespace>
+    <AssemblyName>CherokeeLanguageLearningTool</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -24,6 +24,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Cherokee Language Learning Tool</ProductName>
+    <PublisherName>Fine Software</PublisherName>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
@@ -61,7 +63,7 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>A68F7DAED4DADE23FE13AE97FCA2636C6C24429C</ManifestCertificateThumbprint>
@@ -70,7 +72,7 @@
     <ManifestKeyFile>CherokeeStudyTool_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>CherokeeStudyTool_TemporaryKey.pfx</AssemblyOriginatorKeyFile>

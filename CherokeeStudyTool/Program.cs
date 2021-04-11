@@ -2,18 +2,18 @@
 using System.Windows.Forms;
 using System.IO;
 
-namespace CherokeeStudyTool
+namespace CherokeeLanguageLearningTool
 {
     static class Program
     {
-        public static bool portableVersion = false;
+        public static bool portableVersion = false; //Set this to true before building a standalone version. Set to false for the installable version.
 
-        //Installable version locations
+        //Installable version default locations
         public static readonly string resourcesFolderLocation = @"C:\ProgramData\Fine Software\Resources\";
         public static readonly string wordListsFolderLocation = @"C:\ProgramData\Fine Software\Resources\WordLists\";
         public static readonly string recordsFolderLocation = @"C:\ProgramData\Fine Software\Records\";
 
-        //Portable version locations
+        //Portable version default locations
         public static string resourcesFolderLocationPortable = @".\Resources\";
         public static string wordListsFolderLocationPortable = @".\Resources\WordLists\";
         public static string recordsFolderLocationPortable = @".\Records\";
@@ -86,7 +86,7 @@ namespace CherokeeStudyTool
 
             CheckCustomPaths();
 
-            if (!resourcesFoldersFound && !customResourcesFolderFound)
+            if (!resourcesFoldersFound && !customResourcesFolderFound) //If the default paths are not found and a custom path is not found or set prompt user to find the location.
             {
                 using (FolderBrowserDialog fbd = new FolderBrowserDialog())
                 {
@@ -99,7 +99,7 @@ namespace CherokeeStudyTool
                 }
             }
 
-            if(!wordListsFoldersFound && !customWordListsFolderFound)
+            if(!wordListsFoldersFound && !customWordListsFolderFound) //If the default paths are not found and a custom path is not found or set prompt user to find the location.
             {
                 using (FolderBrowserDialog fbd = new FolderBrowserDialog())
                 {
@@ -111,7 +111,7 @@ namespace CherokeeStudyTool
                     }
                 }
             }
-            if (!recordsFoldersFound && !customRecordsFolderFound)
+            if (!recordsFoldersFound && !customRecordsFolderFound) //If the default paths are not found and a custom path is not found or set prompt user to find the location.
             {
                 using (FolderBrowserDialog fbd = new FolderBrowserDialog())
                 {
