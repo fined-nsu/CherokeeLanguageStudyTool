@@ -7,7 +7,7 @@ This application contains two primary modules each consisting of a practice mode
 ## Table of Contents
 1. [Installation][README Installation Header]
 2. [Setting up for development][README Dev Setup Header]
-3. [Technology][README Technology]
+3. [Technology][README Technology Header]
 3. [Instructions][README Instructions Header]
 4. [License][README License Header]
 
