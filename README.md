@@ -7,7 +7,7 @@ This application contains two primary modules each consisting of a practice mode
 ## Table of Contents
 1. [Installation][README Installation Header]
 2. [Setting up for development][README Dev Setup Header]
-2. [Usage][README Usage Header]
+3. [Technology][README Technology]
 3. [Instructions][README Instructions Header]
 4. [License][README License Header]
 
@@ -34,7 +34,65 @@ Within GitHub Desktop the repository can be cloned using the following steps:
 
 Alternatively [download the project zip file][Project ZIP file] and decompress it. Locate the solution file CherokeeStudyTool.sln within the decompressed folder and open it with Visual Studio.
 
-### Usage
+### Technology
+This application was developed using C# and .NET Framework 4.7.2. The user interface was created using Windows Forms. Microsoft Windows Media Player has been incorporated to allow playing audio files. This required installing the Windows SDK and adding wmplib.dll to the Visual Studio toolbox as a custom control. More info can be found [here](https://docs.microsoft.com/en-us/windows/win32/wmp/using-the-windows-media-player-control-with-microsoft-visual-studio).
+
+The following excerpt from the code shows how the Windows Media Player control was implemented in the Phonetic Practice mode to play sound files from the Cherokee Language program website:
+
+```C#
+private void PlayCherokeeAudio(object sender, EventArgs e)
+        {
+            // Requires wmplib. Info available at https://docs.microsoft.com/en-us/windows/win32/wmp/using-the-windows-media-player-control-with-microsoft-visual-studio.
+
+            ListBox lb = sender as ListBox;
+            if (lb.SelectedItem == null)
+            {
+                return;
+            }
+
+            WindowsMediaPlayer player = new WindowsMediaPlayer(); // Creates a new media player.
+            if (lb.SelectedIndex < CherokeeWordList.Count) // Checks whether selected index is in range to prevent errors with improper word list formatting.
+            {
+                string wordString = CherokeeWordList[lb.SelectedIndex].English;     // Assigns the string stored at the selected listbox index.
+                player.URL = @"https://data.cherokee.org/Cherokee/LexiconSoundFiles/" + wordString + ".mp3";    // Creates a URL to the audio file on the Cherokee Language website.
+
+
+                try   // Attempts to play the audio file if it exists.
+                {
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(player.URL);
+                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+                    if (response.StatusCode == HttpStatusCode.OK)  // If the site returns a status of OK then the file is played.
+                    {
+                        player.controls.play(); //Plays the audio.
+                        lblAudioStatus.Visible = false; //Hides the audio status label if audio is playing.
+                    }
+
+                    response.Close();
+                }
+                catch (WebException ex)     // If the audio file doesn't exist a message is sent to the audio status label to tell the user the file is unavailable.
+                {
+                    if (ex.Status == WebExceptionStatus.ProtocolError && ex.Response != null)   //Checks if an error message is received and the respsonse is not null.
+                    {
+                        var resp = (HttpWebResponse)ex.Response;    //Assigns the exception response as an HttpWebResponse message.
+                        if (resp.StatusCode == HttpStatusCode.NotFound) //If the response code indicates the resource isn't found a message is assigned to the audio status label to indicate the audio is unavailable.
+                        {
+                            lblAudioStatus.Text = "Audio Unavailable for " + CherokeeWordList[lb.SelectedIndex].English;    //The file name is included with the message.
+                            lblAudioStatus.Visible = true;  //The label is set to visible.
+                        }
+                    }
+                    else
+                    { throw; }
+                }
+            }
+            else
+            {
+                lblAudioStatus.Text = "Word list formatting error before line " + (lb.SelectedIndex + 1); //Provide error information if selected index is out of range due to improper word list formatting.
+            }
+        }
+
+```
+
 
 ### Instructions
 This application focuses on learning the Cherokee language in two parts. The first part is the Phonetic and the second is the Syllabary. Each part has a practice mode and an assessment.
@@ -75,7 +133,7 @@ Using the MIT License - See [LICENSE][LICENSE]
 [Google Drive]: https://drive.google.com/drive/folders/1NJnJqUv1bzFtUIZ1-yjPH09sDGkvy0zn?usp=sharing
 [README Installation Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#installation
 [README Dev Setup Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#setting-up-for-development
-[README Usage Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#Usage
+[README Technology Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#Technology
 [README Instructions Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#Instructions
 [README License Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#License
 [LICENSE]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/Licensing/LICENSE
