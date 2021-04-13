@@ -34,6 +34,26 @@ Within GitHub Desktop the repository can be cloned using the following steps:
 
 Alternatively [download the project zip file][Project ZIP file] and decompress it. Locate the solution file CherokeeStudyTool.sln within the decompressed folder and open it with Visual Studio.
 
+You might encounter one of the following errors:
+
+* Severity Code Description Project File Line Suppression State Error Couldn't process file PhoneticPracticeForm.resx due to its being in the Internet or Restricted zone or having the mark of the web on the file.
+Remove the mark of the web if you want to process these files.
+
+* CherokeeStudyTool Couldn't process file PhoneticPracticeForm.resx due to its being in the Internet or Restricted zone or having the mark of the web on the file.
+Remove the mark of the web if you want to process these files.
+
+To address this issue:
+1. Navigate to the PhoneticPracticeForm.resx file within the project folder structure (e.g. C:\Users\\*username*\Downloads\CherokeeLanguageStudyTool-main\CherokeeStudyTool\PhoneticPracticeForm.resx where username is replaced with the actual user profile name)
+2. Right-click on the PhoneticPracticeForm.resx file and left-click Properties.
+3. At the bottom of the Properties window look for a message with an Unblock checkbox.
+4. Click the checkbox to unblock the file.
+5. Click OK to save the change and close the file Properties.
+6. Attempt to run the project again.
+
+If you receive the same message with a different file name repeat the process but substitute the file specified in the error.
+
+Unblocking the file removes the mark of the web from the file. This is a safety measure implemented by Microsoft Windows. Unfortunately this is not something that cannot be addressed within the code, and must be performed on the end user's computer.
+
 ### Technology
 This application was developed using C# and .NET Framework 4.7.2. The user interface was created using Windows Forms. Microsoft Windows Media Player has been incorporated to allow playing audio files. This required installing the Windows SDK and adding wmplib.dll to the Visual Studio toolbox as a custom control. More info can be found [here](https://docs.microsoft.com/en-us/windows/win32/wmp/using-the-windows-media-player-control-with-microsoft-visual-studio).
 
