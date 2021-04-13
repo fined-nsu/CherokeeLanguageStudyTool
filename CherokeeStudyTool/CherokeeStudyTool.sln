@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CherokeeStudyTool", "CherokeeStudyTool.csproj", "{8256F324-47EC-411A-B75B-689E942B205A}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CherokeeLearning", "Setup\Setup.vdproj", "{EE3A41A7-4251-4626-9E1A-39089E53ACDA}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{8256F324-47EC-411A-B75B-689E942B205A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8256F324-47EC-411A-B75B-689E942B205A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8256F324-47EC-411A-B75B-689E942B205A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EE3A41A7-4251-4626-9E1A-39089E53ACDA}.Debug|Any CPU.ActiveCfg = Debug
-		{EE3A41A7-4251-4626-9E1A-39089E53ACDA}.Debug|Any CPU.Build.0 = Debug
-		{EE3A41A7-4251-4626-9E1A-39089E53ACDA}.Release|Any CPU.ActiveCfg = Release
-		{EE3A41A7-4251-4626-9E1A-39089E53ACDA}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
