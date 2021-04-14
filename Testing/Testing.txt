@@ -1,0 +1,12 @@
+English,,
+,Phonetic,
+,,Syllabary
+Missing,LastWord,
+Missing,,MiddleWord
+,Missing,FirstWord
+,,,
+,,,,
+,
+
+,
+.
