@@ -45,4 +45,3 @@ C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeSt
 C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\obj\Debug\CherokeeLanguageLearningTool.Properties.Resources.resources
 C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\obj\Debug\CherokeeLanguageLearningTool.exe
 C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\obj\Debug\CherokeeLanguageLearningTool.pdb
-C:\Users\fined\Google Drive\School\Capstone\CherokeeLanguageStudyTool\CherokeeStudyTool\obj\Debug\CherokeeStudyTool.csprojAssemblyReference.cache
