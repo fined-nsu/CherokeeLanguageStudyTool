@@ -4,6 +4,10 @@
 ### Description
 This application contains two primary modules each consisting of a practice mode and an assessment mode. The primary goal of this application is to assist in learning the Cherokee language in the Phonetic and Syllabary forms. Methods used include word lists displaying English, Phonetic, and Syllabary translations as well as matching Phonetic syllables to the corresponding Syllabary glyph. After spending time with the practice modes an assessment can be completed to measure performance. A record keeping system is in place to allow viewing assessment performance metrics over time. This includes the top score, previous performance score, and number of attempts for each assessment.
 
+### Requirements Analysis
+
+Requirements analysis information can be found in the [Requirements Analysis.md][Requirements Analysis] file located in the [Documentation][Documentation Folder]
+
 ## Table of Contents
 1. [Installation][README Installation Header]
 2. [Setting up for development][README Dev Setup Header]
@@ -171,3 +175,4 @@ Using the MIT License - See [LICENSE][LICENSE]
 [Records Not Found]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/RecordsNotFound.png
 [Documentation Folder]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/tree/main/Documentation
 [Word List Creation]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/tree/main/Documentation/WordListCreation.md
+[Requirements Analysis]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/tree/main/Documentation/RequirementsAnalysis.md
