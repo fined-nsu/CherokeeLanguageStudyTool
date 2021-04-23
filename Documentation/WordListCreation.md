@@ -16,7 +16,7 @@ Newly created word list files can be saved to any location and will be copied to
 
 Word lists can be removed within the Settings screen.
 
-[Example file]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/ColorsNotepad.png"
+[Example file]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/ColorsNotepad.png
 
 [Settings]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/misc/SettingsMainMenu.png
 
