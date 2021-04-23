@@ -10,9 +10,13 @@ New word list files need to contain, in order, the English, Phonetic, and Syllab
 
 Newly created word list files can be saved to any location and will be copied to the applications Resources\WordLists folder upon import. This means the word list only needs to be imported once.
 
+To access Settings click Help > Settings from the Main Menu screen
+
 ![Settings]
 
 ![Settings Word List]
+
+Click the Import List button, locate the newly created word list file, and click Open to import the file
 
 ![Import List]
 
