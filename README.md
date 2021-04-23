@@ -6,7 +6,7 @@ This application contains two primary modules each consisting of a practice mode
 
 ### Requirements Analysis
 
-Requirements analysis information can be found in the [Requirements Analysis.md][Requirements Analysis] file located in the [Documentation][Documentation Folder]
+Requirements analysis information can be found in the [Requirements Analysis.md][Requirements Analysis] file located in the [Documentation folder][Documentation Folder].
 
 ## Table of Contents
 1. [Installation][README Installation Header]
@@ -28,7 +28,7 @@ The application can be uninstalled through the typical process such as the Add/R
 A readme file is also included with some brief information about the program.
 
 ### Setting up for development
-For instructions cloning the project directly within Visual Studio 2019 see these instructions from Microsoft: [Open a project from a repo](https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-open-project-from-repo-visual-studio-2019?view=vs-2019&tabs=vs168later)
+For instructions cloning the project directly within Visual Studio 2019 see these instructions from Microsoft: [Open a project from a repo](https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-open-project-from-repo-visual-studio-2019?view=vs-2019&tabs=vs168later).
 
 ##### Within GitHub Desktop the repository can be cloned using the following steps:
 1. Select File
