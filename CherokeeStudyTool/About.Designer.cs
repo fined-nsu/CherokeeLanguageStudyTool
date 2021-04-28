@@ -64,7 +64,7 @@ namespace CherokeeLanguageLearningTool
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.returnToMainMenuToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 30);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 32);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // returnToMainMenuToolStripMenuItem
@@ -177,10 +177,10 @@ namespace CherokeeLanguageLearningTool
             this.label4.Location = new System.Drawing.Point(309, 711);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1688, 29);
+            this.label4.Size = new System.Drawing.Size(1185, 29);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Beta Testers: Brandon Thompson, Tiffany Muskrat, Mandy Tucker, Tomi Kirkpatrick, " +
-    "Jessica Soap, my fellow capstone classmates, Kari Fine, and my children";
+            this.label4.Text = "Beta Testers: Tomi Kirkpatrick, Daniel Basden, Kevin Denton, my fellow capstone c" +
+    "lassmates, and my children";
             this.label4.Visible = false;
             // 
             // label5

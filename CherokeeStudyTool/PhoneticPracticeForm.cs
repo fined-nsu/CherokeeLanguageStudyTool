@@ -4,6 +4,7 @@ using System.Net;
 using System.Windows.Forms;
 using System.IO;
 using WMPLib;
+using System.Threading;
 
 namespace CherokeeLanguageLearningTool
 {
@@ -344,8 +345,9 @@ namespace CherokeeLanguageLearningTool
                         player.controls.play(); //Plays the audio.
                         lblAudioStatus.Visible = false; //Hides the audio status label if audio is playing.
                     }
-
                     response.Close();
+
+                    PlaybackRestrict();
                 }
                 catch (WebException ex)     // If the audio file doesn't exist a message is sent to the audio status label to tell the user the file is unavailable.
                 {
@@ -366,6 +368,20 @@ namespace CherokeeLanguageLearningTool
             {
                 lblAudioStatus.Text = "Word list formatting error before line " + (lb.SelectedIndex + 1); //Provide error information if selected index is out of range due to improper word list formatting.
             }
+        }
+
+        /// <summary>
+        /// Implements a one second restriction between audio playback to reduce over utilization of the Cherokee Language Program website.
+        /// </summary>
+        private void PlaybackRestrict()
+        {
+            listBoxEnglish.Enabled = false;
+            listBoxPhonetic.Enabled = false;
+            listBoxSyllabary.Enabled = false;
+            Thread.Sleep(1000);
+            listBoxEnglish.Enabled = true;
+            listBoxPhonetic.Enabled = true;
+            listBoxSyllabary.Enabled = true;
         }
 
         /// <summary>
