@@ -151,7 +151,7 @@ The Syllabary assessment mode presents Syllabary glyph images and allows the use
 
 ![Syllabary Assessment]
 
-### Documentation
+### Project Documentation
 
 Project documentation can be found in the [Documentation folder][Documentation Folder].
 
@@ -165,7 +165,7 @@ Using the MIT License - See [LICENSE][LICENSE]
 [README Dev Setup Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#setting-up-for-development
 [README Technology Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#Technology
 [README Instructions Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#Instructions
-[Documentation Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#Documentation
+[README Project Documentation Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#Project-Documentation
 [README License Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#License
 [LICENSE]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/Licensing/LICENSE
 [Project ZIP file]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/archive/refs/heads/main.zip
