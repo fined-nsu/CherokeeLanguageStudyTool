@@ -4,16 +4,14 @@
 ### Description
 This application contains two primary modules each consisting of a practice mode and an assessment mode. The primary goal of this application is to assist in learning the Cherokee language in the Phonetic and Syllabary forms. Methods used include word lists displaying English, Phonetic, and Syllabary translations as well as matching Phonetic syllables to the corresponding Syllabary glyph. After spending time with the practice modes an assessment can be completed to measure performance. A record keeping system is in place to allow viewing assessment performance metrics over time. This includes the top score, previous performance score, and number of attempts for each assessment.
 
-### Requirements Analysis
-
-Requirements analysis information can be found in the [RequirementsAnalysis.md][Requirements Analysis] file located in the [Documentation folder][Documentation Folder].
 
 ## Table of Contents
 1. [Installation][README Installation Header]
 2. [Setting up for development][README Dev Setup Header]
 3. [Technology][README Technology Header]
-3. [Instructions][README Instructions Header]
-4. [License][README License Header]
+4. [Instructions][README Instructions Header]
+5. [Documentation][Documentation Header]
+6. [License][README License Header]
 
 ### Installation
 A standalone and installable version of the application are available in the following Google Drive shared folder:
@@ -153,7 +151,9 @@ The Syllabary assessment mode presents Syllabary glyph images and allows the use
 
 ![Syllabary Assessment]
 
+### Documentation
 
+Project documentation can be found in the [Documentation folder][Documentation Folder]. This includes requirements analysis in [RequirementsAnalysis.md][Requirements Analysis] and modeling in [Modeling.md][Modeling].
 
 ### License
 Using the MIT License - See [LICENSE][LICENSE]
@@ -163,6 +163,7 @@ Using the MIT License - See [LICENSE][LICENSE]
 [README Dev Setup Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#setting-up-for-development
 [README Technology Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#Technology
 [README Instructions Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#Instructions
+[Documentation Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#Documentation
 [README License Header]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/README.md#License
 [LICENSE]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/Licensing/LICENSE
 [Project ZIP file]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/archive/refs/heads/main.zip
@@ -176,3 +177,4 @@ Using the MIT License - See [LICENSE][LICENSE]
 [Documentation Folder]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/tree/main/Documentation
 [Word List Creation]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/tree/main/Documentation/WordListCreation.md
 [Requirements Analysis]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/tree/main/Documentation/RequirementsAnalysis.md
+[Modeling]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/tree/main/Documentation/Modeling.md
