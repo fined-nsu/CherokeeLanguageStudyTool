@@ -155,7 +155,7 @@ The Syllabary assessment mode presents Syllabary glyph images and allows the use
 
 Project documentation can be found in the [Documentation folder][Documentation Folder].
 
-This includes requirements analysis in [RequirementsAnalysis.md][Requirements Analysis] and modeling in [Modeling.md][Modeling].
+This includes requirements analysis in [RequirementsAnalysis.md][Requirements Analysis], modeling in [Modeling.md][Modeling], and testing in [Testing.md][Testing].
 
 ### License
 Using the MIT License - See [LICENSE][LICENSE]
@@ -180,3 +180,4 @@ Using the MIT License - See [LICENSE][LICENSE]
 [Word List Creation]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/tree/main/Documentation/WordListCreation.md
 [Requirements Analysis]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/tree/main/Documentation/RequirementsAnalysis.md
 [Modeling]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/tree/main/Documentation/Modeling.md
+[Testing]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/tree/main/Testing/Testing.md
