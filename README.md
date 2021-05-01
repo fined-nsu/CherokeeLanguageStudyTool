@@ -153,7 +153,9 @@ The Syllabary assessment mode presents Syllabary glyph images and allows the use
 
 ### Documentation
 
-Project documentation can be found in the [Documentation folder][Documentation Folder]. This includes requirements analysis in [RequirementsAnalysis.md][Requirements Analysis] and modeling in [Modeling.md][Modeling].
+Project documentation can be found in the [Documentation folder][Documentation Folder].
+
+This includes requirements analysis in [RequirementsAnalysis.md][Requirements Analysis] and modeling in [Modeling.md][Modeling].
 
 ### License
 Using the MIT License - See [LICENSE][LICENSE]
