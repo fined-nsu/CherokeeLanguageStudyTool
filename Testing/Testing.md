@@ -1,5 +1,7 @@
 # Project Testing information
 
+The project testing folder can be found here: [Testing Folder][Testing].
+
 ### Test Plan Documentation
 
 Here is a link to the project test plan in PDF form. The plan includes separate pages for each forms tests and results.
@@ -19,6 +21,7 @@ Here is a picture showing the improperly formatted test word list to display exc
 ![Improper Word List Format Example][Improper Word List Format Example]
 
 
+[Testing]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/tree/main/Testing
 [Test Plan]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/Testing/Test%20Plan.pdf
 [Test Word List]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/Testing/Testing.txt
 [Improper Word List Format Example]: https://github.com/fined-nsu/CherokeeLanguageStudyTool/blob/main/Testing/Word%20List%20Improper%20Format%20Test.png
