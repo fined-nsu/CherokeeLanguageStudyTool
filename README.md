@@ -10,7 +10,7 @@ This application contains two primary modules each consisting of a practice mode
 2. [Setting up for development][README Dev Setup Header]
 3. [Technology][README Technology Header]
 4. [Instructions][README Instructions Header]
-5. [Documentation][Documentation Header]
+5. [Project Documentation][README Project Documentation Header]
 6. [License][README License Header]
 
 ### Installation
